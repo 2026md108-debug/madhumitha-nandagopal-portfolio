@@ -1,7 +1,8 @@
 export const navigation = [
   { id: 'about', label: 'About' },
+  { id: 'competencies', label: 'Competencies' },
   { id: 'education', label: 'Education' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'projects', label: 'Research' },
   { id: 'achievements', label: 'Achievements' },
   { id: 'skills', label: 'Skills & interests' },
   { id: 'activities', label: 'Activities' },
@@ -26,6 +27,44 @@ export const education = [
     highlights: ['Add qualification', 'Add achievement'],
   },
 ]
+
+export type CompetencyEntry = {
+  id: string
+  title: string
+  date?: string
+  summary?: string
+  image?: string
+  imageAlt?: string
+  href?: string
+  documentUrl?: string
+}
+
+const competencyFolders = [
+  { id: 'learning', name: 'Learning & coursework', description: 'Coursework, assignments, and presentations.' },
+  { id: 'evidence', name: 'Evidence & research', description: 'Research notes and supporting evidence.' },
+  { id: 'reflection', name: 'Reflections & documents', description: 'Learning reflections, feedback, and files.' },
+]
+
+const competencyDomainDetails = [
+  { id: 'medical-expert', code: 'ME', name: 'Medical Expert', description: 'Medical knowledge, clinical reasoning, and applying science to health questions.' },
+  { id: 'evidence-based-practitioner', code: 'EBP', name: 'Evidence-based Practitioner & Scholar', description: 'Research, critical appraisal, and scholarly learning.' },
+  { id: 'patient-care-provider', code: 'PCP', name: 'Patient Care Provider & Health Advocate', description: 'Patient-centered care, health promotion, and advocacy.' },
+  { id: 'communicator', code: 'COM', name: 'Communicator', description: 'Clear, compassionate communication with patients and colleagues.' },
+  { id: 'collaborator-innovator-leader', code: 'CIL', name: 'Collaborator, Innovator & Leader', description: 'Teamwork, leadership, and thoughtful improvement.' },
+  { id: 'professional', code: 'PRO', name: 'Professional', description: 'Ethics, accountability, and professional conduct.' },
+  { id: 'health-system-proponent', code: 'HSP', name: 'Health System Proponent', description: 'Systems awareness, safety, and improving how care is delivered.' },
+  { id: 'self-profession-enhancer', code: 'SPE', name: 'Self and Profession Enhancer', description: 'Reflection, resilience, and continuing professional development.' },
+  { id: 'socially-accountable', code: 'SA', name: 'Socially Accountable', description: 'Community engagement, equity, and responsibility to society.' },
+]
+
+export const competencyDomains = competencyDomainDetails.map((domain) => ({
+  ...domain,
+  folders: competencyFolders.map((folder) => ({
+    ...folder,
+    id: `${domain.id}-${folder.id}`,
+    entries: [] as CompetencyEntry[],
+  })),
+}))
 
 export type PortfolioProject = {
   id: string
