@@ -135,45 +135,57 @@ function PortfolioSite() {
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader />
       <main id="main">
-        <section className="hero page-width" id="home" aria-labelledby="hero-title">
-          <div className="hero__heading">
-            <p className="eyebrow hero__eyebrow"><span className="status-dot" />MEDICAL STUDENT · [UNIVERSITY NAME]</p>
-            <h1 className="hero__name" id="hero-title">[Your Name]</h1>
-          </div>
-          <div className="hero__lower">
-            <div className="hero__copy">
-              <p className="hero__intro">A medical student with a growing interest in medicine, healthcare, research, and the lifelong practice of asking better questions.</p>
-              <div className="hero__actions">
-                <a className="button button--primary" href="#projects">Explore my portfolio <ArrowRight aria-hidden="true" /></a>
+        <section className="home-section" id="home" aria-labelledby="hero-title">
+          <div className="hero-cover page-width">
+            <div className="hero-cover__content">
+              <p className="eyebrow hero-cover__eyebrow"><span className="status-dot" />PERSONAL ACADEMIC PORTFOLIO</p>
+              <h1 className="hero__name" id="hero-title">[Your Name]</h1>
+              <p className="hero-cover__role"><span>MEDICAL STUDENT</span><span aria-hidden="true">·</span><span>[University Name]</span></p>
+              <p className="hero-cover__statement">An evolving record of learning, research, and a growing interest in thoughtful, evidence-led care.</p>
+              <div className="hero-cover__actions">
+                <a className="button button--primary" href="#home-profile">Enter portfolio <ArrowDown aria-hidden="true" /></a>
                 <a className="button button--text" href="#contact">Contact me <ArrowUpRight aria-hidden="true" /></a>
               </div>
-              <div className="hero__footnote"><span className="hero__footnote-line" />Currently studying at <strong>[University Name]</strong></div>
             </div>
-            <div className="hero__visual">
-              <span className="hero__visual-mark" aria-hidden="true">+</span>
-              <div className="portrait-frame">
-                <Image
-                  src="/images/portfolio-portrait.png"
-                  alt="Replace with a professional portrait of [Your Name]"
-                  fill
-                  priority
-                  sizes="(max-width: 800px) 80vw, 36vw"
-                  className="portrait-frame__image"
-                />
-                <div className="portrait-frame__label"><span>01 / PROFILE</span><span>PHOTO PLACEHOLDER</span></div>
-              </div>
+            <div className="hero-cover__footer">
+              <span>MEDICINE · RESEARCH · LEARNING</span>
+              <a href="#home-profile">CONTINUE <ArrowDown aria-hidden="true" /></a>
+              <span>01 / 02</span>
             </div>
-            <div className="hero__interests">
-              <h2 className="eyebrow" id="hero-interests-title">AREAS OF INTEREST</h2>
-              <ul className="hero__interests-list">
+          </div>
+          <div className="hero-profile page-width" id="home-profile" role="group" aria-labelledby="hero-profile-title">
+            <div className="hero-profile__copy">
+              <p className="eyebrow">ABOUT THE STUDENT</p>
+              <h2 id="hero-profile-title">Curiosity, perspective, and care.</h2>
+              <p className="hero-profile__intro">A medical student with a growing interest in medicine, healthcare, research, and continuous learning.</p>
+              <h3 className="hero-profile__subhead">AREAS OF INTEREST</h3>
+              <ul className="hero-profile__interests">
                 <li>Medicine &amp; healthcare</li>
                 <li>Research &amp; evidence</li>
                 <li>Patient-centered care</li>
                 <li>Continuous learning</li>
               </ul>
+              <div className="hero-profile__details"><span>STUDYING AT</span><strong>[University Name]</strong></div>
+              <a className="hero-profile__about-link" href="#about">Continue to about <ArrowRight aria-hidden="true" /></a>
+            </div>
+            <div className="hero-profile__visual">
+              <figure className="portrait-frame">
+                <Image
+                  src="/images/portfolio-portrait.png"
+                  alt="Replace with a professional portrait of [Your Name]"
+                  fill
+                  priority
+                  sizes="(max-width: 800px) 85vw, 42vw"
+                  className="portrait-frame__image"
+                />
+                <figcaption className="portrait-frame__label"><span>PROFILE IMAGE</span><span>REPLACE WITH YOUR PHOTO</span></figcaption>
+              </figure>
+            </div>
+            <div className="hero-profile__footer">
+              <span>02 / 02</span>
+              <a href="#about">CONTINUE TO PORTFOLIO <ArrowDown aria-hidden="true" /></a>
             </div>
           </div>
-          <a className="scroll-cue" href="#about"><span>SCROLL TO EXPLORE</span><ArrowDown aria-hidden="true" /></a>
         </section>
 
         <section className="about-section section-pad" id="about" aria-labelledby="01-title">
