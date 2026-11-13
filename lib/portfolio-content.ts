@@ -81,55 +81,55 @@ export const projects: PortfolioProject[] = [
   {
     id: 'coursework',
     category: 'Coursework',
-    date: '[Month Year]',
-    title: '[Project title]',
+    date: 'Month Year',
+    title: 'Project title',
     description: 'Add a short overview of the assignment, the question it explored, and what you learned.',
-    subject: '[Subject or course]',
+    subject: 'Subject or course',
   },
   {
     id: 'research',
     category: 'Research & inquiry',
-    date: '[Month Year]',
-    title: '[Research project title]',
+    date: 'Month Year',
+    title: 'Research project title',
     description: 'Summarize your topic, contribution, and any findings or skills you would like to highlight.',
-    subject: '[Research area]',
+    subject: 'Research area',
   },
   {
     id: 'presentation',
     category: 'Presentation',
-    date: '[Month Year]',
-    title: '[Presentation title]',
+    date: 'Month Year',
+    title: 'Presentation title',
     description: 'Describe a medical presentation, seminar, or academic project and the audience it served.',
-    subject: '[Subject or event]',
+    subject: 'Subject or event',
   },
 ]
 
 export const credentials: PortfolioCredential[] = [
-  { id: 'certificate', type: 'CERTIFICATION', title: '[Certificate title]', issuer: '[Issuing organization]', date: '[Year]' },
-  { id: 'workshop', type: 'WORKSHOP / SEMINAR', title: '[Workshop or seminar]', issuer: '[Organizing institution]', date: '[Year]' },
-  { id: 'achievement', type: 'ACADEMIC ACHIEVEMENT', title: '[Award or accomplishment]', issuer: '[Institution or organization]', date: '[Year]' },
+  { id: 'certificate', type: 'CERTIFICATION', title: 'Certificate title', issuer: 'Issuing organization', date: 'Year' },
+  { id: 'workshop', type: 'WORKSHOP / SEMINAR', title: 'Workshop or seminar', issuer: 'Organizing institution', date: 'Year' },
+  { id: 'achievement', type: 'ACADEMIC ACHIEVEMENT', title: 'Award or accomplishment', issuer: 'Institution or organization', date: 'Year' },
 ]
 
 export const activities: PortfolioActivity[] = [
   {
     id: 'volunteering',
     type: 'VOLUNTEERING',
-    title: '[Volunteer experience]',
+    title: 'Volunteer experience',
     description: 'Add the organization, your role, and a detail about the community or cause.',
-    date: '[Year or dates]',
+    date: 'Year or dates',
   },
   {
     id: 'student-life',
     type: 'STUDENT LIFE',
-    title: '[Student activity or event]',
+    title: 'Student activity or event',
     description: 'Include student societies, events, peer activities, or participation certificates.',
-    date: '[Year or dates]',
+    date: 'Year or dates',
   },
   {
     id: 'leadership',
     type: 'LEADERSHIP',
-    title: '[Leadership experience]',
+    title: 'Leadership experience',
     description: 'Share a role, responsibility, or experience where you helped bring people together.',
-    date: '[Year or dates]',
+    date: 'Year or dates',
   },
 ]

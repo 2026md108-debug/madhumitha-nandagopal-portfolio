@@ -66,11 +66,16 @@ function CompetencyDomainCard({ domain }: { domain: (typeof competencyDomains)[n
       </summary>
       <div className="competency-domain__folders">
         {domain.folders.map((folder) => (
-          <article className="competency-folder" key={folder.id}>
-            <span className="folder-mark" aria-hidden="true" />
-            <div className="competency-folder__content">
-              <div className="competency-folder__heading"><h4>{folder.name}</h4><span>{folder.entries.length.toString().padStart(2, '0')}</span></div>
-              <p>{folder.description}</p>
+          <details className="competency-folder" key={folder.id}>
+            <summary className="competency-folder__summary">
+              <span className="folder-mark" aria-hidden="true" />
+              <div className="competency-folder__content">
+                <div className="competency-folder__heading"><h4>{folder.name}</h4><span>{folder.entries.length.toString().padStart(2, '0')}</span></div>
+                <p>{folder.description}</p>
+              </div>
+              <span className="competency-folder__toggle"><ArrowDown aria-hidden="true" /></span>
+            </summary>
+            <div className="competency-folder__body">
               {folder.entries.length ? (
                 <ul className="competency-folder__entries">
                   {folder.entries.map((entry) => (
@@ -84,9 +89,14 @@ function CompetencyDomainCard({ domain }: { domain: (typeof competencyDomains)[n
                     </li>
                   ))}
                 </ul>
-              ) : <p className="competency-folder__empty">No entries yet. Add your own when you&apos;re ready.</p>}
+              ) : (
+                <div className="competency-folder__empty">
+                  <span className="competency-folder__empty-mark" aria-hidden="true">+</span>
+                  <div><strong>No entries yet</strong><p>Add your first reflection, project, or document here.</p></div>
+                </div>
+              )}
             </div>
-          </article>
+          </details>
         ))}
         <p className="competency-domain__note">Folders are ready for your reflections, coursework, evidence, and documents.</p>
       </div>
@@ -291,10 +301,10 @@ function PortfolioSite() {
               <p className="contact-intro">For academic connections, research conversations, or a simple hello, I&apos;d be glad to hear from you.</p>
             </div>
             <div className="contact-links">
-              <a href="mailto:your.email@example.com"><span className="contact-link__icon"><Mail aria-hidden="true" /></span><span><small>EMAIL</small>your.email@example.com</span><ArrowUpRight aria-hidden="true" /></a>
+              <a href="mailto:2026md108@mygmu.ac.ae"><span className="contact-link__icon"><Mail aria-hidden="true" /></span><span><small>EMAIL</small>2026md108@mygmu.ac.ae</span><ArrowUpRight aria-hidden="true" /></a>
               <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer"><span className="contact-link__icon contact-link__icon--linkedin" aria-hidden="true">in</span><span><small>LINKEDIN</small>Connect professionally</span><ArrowUpRight aria-hidden="true" /></a>
             </div>
-            <div className="contact-bottom"><span>OPEN TO MEANINGFUL CONNECTIONS</span><span>[City, Country]</span></div>
+            <div className="contact-bottom"><span>OPEN TO MEANINGFUL CONNECTIONS</span><span>City, Country</span></div>
           </div>
         </section>
       </main>
