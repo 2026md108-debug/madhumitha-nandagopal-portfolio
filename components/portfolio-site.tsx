@@ -146,6 +146,7 @@ function PortfolioSite() {
                 <a className="button button--text" href="#contact">Contact me <ArrowUpRight aria-hidden="true" /></a>
               </div>
             </div>
+            <span className="medical-mark" aria-hidden="true">+</span>
             <div className="hero-cover__footer">
               <span>MEDICINE · RESEARCH · LEARNING</span>
               <a href="#home-profile">CONTINUE <ArrowDown aria-hidden="true" /></a>
@@ -157,6 +158,9 @@ function PortfolioSite() {
               <p className="eyebrow">ABOUT THE STUDENT</p>
               <h2 id="hero-profile-title">Curiosity, perspective, and care.</h2>
               <p className="hero-profile__intro">A medical student with a growing interest in medicine, healthcare, research, and continuous learning.</p>
+              <div className="medical-pulse" aria-hidden="true">
+                <svg viewBox="0 0 94 24" fill="none"><path d="M1 12H28L35 12L41 5L47 19L54 8L60 12H93" /></svg>
+              </div>
               <h3 className="hero-profile__subhead">AREAS OF INTEREST</h3>
               <ul className="hero-profile__interests">
                 <li>Medicine &amp; healthcare</li>
