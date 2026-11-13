@@ -1,31 +1,11 @@
 export const navigation = [
   { id: 'about', label: 'About' },
   { id: 'competencies', label: 'Competencies' },
-  { id: 'education', label: 'Education' },
   { id: 'projects', label: 'Research' },
   { id: 'achievements', label: 'Achievements' },
   { id: 'skills', label: 'Skills & interests' },
   { id: 'activities', label: 'Activities' },
   { id: 'contact', label: 'Contact' },
-]
-
-export const education = [
-  {
-    id: 'medical-school',
-    date: '[Start Year] — Present',
-    institution: '[Medical University Name]',
-    qualification: '[Medical degree / programme]',
-    note: 'Current medical studies · [City, Country]',
-    highlights: ['Medical education', 'In progress'],
-  },
-  {
-    id: 'previous-education',
-    date: '[Start Year] — [End Year]',
-    institution: '[Previous School Name]',
-    qualification: '[School qualification or programme]',
-    note: 'Previous education · [City, Country]',
-    highlights: ['Add qualification', 'Add achievement'],
-  },
 ]
 
 export type CompetencyEntry = {

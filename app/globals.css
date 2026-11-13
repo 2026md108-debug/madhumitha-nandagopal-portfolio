@@ -167,23 +167,6 @@ svg { flex: 0 0 auto; }
 .competency-domain__note, .competencies-note { margin: 21px 0 0; color: var(--muted-ink); font-size: 10px; line-height: 1.7; }
 @keyframes folder-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
-.education-section { background: #f2f3f0; }
-.education-layout { display: grid; grid-template-columns: 1fr 1.55fr; gap: 13%; }
-.section-aside { margin: 7px 0 0; font: 20px/1.4 var(--serif); }
-.section-aside span { display: inline-block; margin-top: 9px; color: var(--muted-ink); font: 11px/1.6 var(--sans); }
-.timeline { position: relative; display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
-.timeline::before { position: absolute; top: 12px; bottom: 35px; left: 17px; width: 1px; background: #cdd8db; content: ''; }
-.timeline__item { position: relative; display: grid; grid-template-columns: 36px 1fr; gap: 19px; padding-bottom: 39px; }
-.timeline__item:last-child { padding-bottom: 0; }
-.timeline__marker { z-index: 1; display: grid; width: 35px; height: 35px; place-items: center; border: 1px solid #cdd8db; border-radius: 50%; color: var(--ink-soft); background: #f2f3f0; }
-.timeline__marker svg { width: 15px; height: 15px; }
-.timeline__date { margin: 3px 0 8px; color: var(--olive); font-size: 9px; font-weight: 600; letter-spacing: .13em; }
-.timeline__content h3 { margin: 0; font: 24px/1.3 var(--serif); }
-.timeline__qualification { margin: 4px 0 0; color: var(--ink-soft); font-size: 12px; }
-.timeline__note { margin: 10px 0 14px; color: var(--muted-ink); font-size: 11px; }
-.timeline__tags { display: flex; flex-wrap: wrap; gap: 7px; }
-.timeline__tags span { padding: 5px 9px; border: 1px solid #d8dfdf; color: #66704e; font-size: 9px; }
-
 .projects-section { background: var(--paper); }
 .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 19px; }
 .project-card { min-width: 0; border: 1px solid #e2e5e2; background: var(--paper-bright); transition: transform .25s ease, box-shadow .25s ease; }
@@ -301,7 +284,6 @@ svg { flex: 0 0 auto; }
   .section-heading { gap: 26px; margin-bottom: 42px; }
   .section-heading__description { max-width: 310px; font-size: 12px; }
   .about-grid { gap: 8%; }
-  .education-layout { grid-template-columns: .7fr 1.3fr; gap: 7%; }
   .projects-grid, .credentials-grid, .activities-grid { gap: 12px; }
   .project-card__body { padding-inline: 16px; }
   .project-card h3 { font-size: 20px; }
@@ -344,16 +326,12 @@ svg { flex: 0 0 auto; }
   .section-heading .eyebrow { margin-bottom: 14px; }
   .section-heading h2 { max-width: 530px; font-size: clamp(27px, 7.8vw, 40px); }
   .section-heading__description { max-width: 500px; font-size: 11px; }
-  .about-grid, .education-layout, .skills-layout { grid-template-columns: 1fr; gap: 35px; }
+  .about-grid, .skills-layout { grid-template-columns: 1fr; gap: 35px; }
   .about-lead { max-width: 540px; padding-left: 21px; }
   .about-lead p { font-size: 18px; }
   .about-details article { grid-template-columns: 31px 1fr; gap: 9px; padding-block: 16px; }
   .about-details h3 { font-size: 17px; }
   .about-details p { font-size: 11px; }
-  .section-aside { margin: 0; font-size: 18px; }
-  .timeline__content h3 { font-size: 22px; }
-  .timeline__item { gap: 14px; padding-bottom: 30px; }
-  .timeline__note { font-size: 10px; }
   .competencies-grid { grid-template-columns: 1fr; gap: 10px; }
   .competency-domain__summary { min-height: 190px; }
   .competency-domain__folders { padding-inline: 10px; }

@@ -6,7 +6,6 @@ import {
   Award,
   BookOpen,
   ClipboardList,
-  GraduationCap,
   HeartHandshake,
   Mail,
   Microscope,
@@ -15,7 +14,6 @@ import {
   activities,
   competencyDomains,
   credentials,
-  education,
   navigation,
   projects,
   skillGroups,
@@ -215,32 +213,9 @@ function PortfolioSite() {
           </div>
         </section>
 
-        <section className="education-section section-pad" id="education" aria-labelledby="03-title">
+        <section className="projects-section section-pad" id="projects" aria-labelledby="03-title">
           <div className="page-width">
-            <SectionHeading number="03" eyebrow="EDUCATION" title="The foundations so far." description="An evolving record of the places, people, and ideas that have shaped my academic journey." />
-            <div className="education-layout">
-              <p className="section-aside">My academic journey<br /><span>Curiosity is a good place to begin.</span></p>
-              <ol className="timeline">
-                {education.map((item) => (
-                  <li className="timeline__item" key={item.id}>
-                    <span className="timeline__marker" aria-hidden="true"><GraduationCap /></span>
-                    <div className="timeline__content">
-                      <p className="timeline__date">{item.date}</p>
-                      <h3>{item.institution}</h3>
-                      <p className="timeline__qualification">{item.qualification}</p>
-                      <p className="timeline__note">{item.note}</p>
-                      <div className="timeline__tags">{item.highlights.map((highlight) => <span key={highlight}>{highlight}</span>)}</div>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        <section className="projects-section section-pad" id="projects" aria-labelledby="04-title">
-          <div className="page-width">
-            <SectionHeading number="04" eyebrow="ACADEMIC WORK & RESEARCH" title="Questions worth exploring." description="A growing collection of coursework, research, and presentations. Each project can tell a little more about how I think and learn." />
+            <SectionHeading number="03" eyebrow="ACADEMIC WORK & RESEARCH" title="Questions worth exploring." description="A growing collection of coursework, research, and presentations. Each project can tell a little more about how I think and learn." />
             <div className="projects-grid">
               {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
             </div>
@@ -248,9 +223,9 @@ function PortfolioSite() {
           </div>
         </section>
 
-        <section className="achievements-section section-pad" id="achievements" aria-labelledby="05-title">
+        <section className="achievements-section section-pad" id="achievements" aria-labelledby="04-title">
           <div className="page-width">
-            <SectionHeading number="05" eyebrow="CERTIFICATIONS & ACHIEVEMENTS" title="Milestones, large and small." description="A place to gather certificates, awards, workshops, seminars, and moments of academic growth." />
+            <SectionHeading number="04" eyebrow="CERTIFICATIONS & ACHIEVEMENTS" title="Milestones, large and small." description="A place to gather certificates, awards, workshops, seminars, and moments of academic growth." />
             <div className="credentials-grid">
               {credentials.map((item, index) => (
                 <article className="credential-card" key={item.id}>
@@ -270,9 +245,9 @@ function PortfolioSite() {
           </div>
         </section>
 
-        <section className="skills-section section-pad" id="skills" aria-labelledby="06-title">
+        <section className="skills-section section-pad" id="skills" aria-labelledby="05-title">
           <div className="page-width">
-            <SectionHeading number="06" eyebrow="SKILLS & INTERESTS" title="A toolkit in the making." description="A thoughtful mix of knowledge, practice, and the curiosity to keep growing." />
+            <SectionHeading number="05" eyebrow="SKILLS & INTERESTS" title="A toolkit in the making." description="A thoughtful mix of knowledge, practice, and the curiosity to keep growing." />
             <div className="skills-layout">
               <div className="skills-intro"><span className="skills-mark" aria-hidden="true">+</span><p>Everyone&apos;s path is different. Keep the skills and interests that reflect your own experience, and make this section yours.</p></div>
               <div className="skill-groups">
@@ -288,9 +263,9 @@ function PortfolioSite() {
           </div>
         </section>
 
-        <section className="activities-section section-pad" id="activities" aria-labelledby="07-title">
+        <section className="activities-section section-pad" id="activities" aria-labelledby="06-title">
           <div className="page-width">
-            <SectionHeading number="07" eyebrow="BEYOND THE CLASSROOM" title="Learning happens everywhere." description="Experiences that build community, perspective, and a sense of responsibility beyond the lecture hall." />
+            <SectionHeading number="06" eyebrow="BEYOND THE CLASSROOM" title="Learning happens everywhere." description="Experiences that build community, perspective, and a sense of responsibility beyond the lecture hall." />
             <div className="activities-grid">
               {activities.map((activity, index) => (
                 <article className="activity-card" key={activity.id}>
@@ -310,7 +285,7 @@ function PortfolioSite() {
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
           <div className="page-width contact-inner">
             <div>
-              <p className="eyebrow"><span>08</span>CONTACT</p>
+              <p className="eyebrow"><span>07</span>CONTACT</p>
               <h2 id="contact-title">Good things begin<br />with a <em>conversation.</em></h2>
               <p className="contact-intro">For academic connections, research conversations, or a simple hello, I&apos;d be glad to hear from you.</p>
             </div>
