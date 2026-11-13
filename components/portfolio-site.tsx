@@ -41,8 +41,8 @@ function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__top">
-        <a className="wordmark" href="#home" aria-label="Your Name — home">
-          <span className="wordmark__text">[Your Name]<small>MEDICAL STUDENT</small></span>
+        <a className="wordmark" href="#home" aria-label="Madhumitha Nandagopal — home">
+          <span className="wordmark__text">Madhumitha Nandagopal<small>MD PROGRAM · YEAR 1</small></span>
         </a>
         <nav className="site-nav" aria-label="Main navigation">
           {navigation.map((item) => (
@@ -138,8 +138,8 @@ function PortfolioSite() {
           <div className="hero-cover page-width">
             <div className="hero-cover__content">
               <p className="eyebrow hero-cover__eyebrow"><span className="status-dot" />PERSONAL ACADEMIC PORTFOLIO</p>
-              <h1 className="hero__name" id="hero-title">[Your Name]</h1>
-              <p className="hero-cover__role"><span>MEDICAL STUDENT</span><span aria-hidden="true">·</span><span>[University Name]</span></p>
+              <h1 className="hero__name" id="hero-title">Madhumitha<br />Nandagopal</h1>
+              <p className="hero-cover__role"><span>DOCTOR OF MEDICINE (MD PROGRAM)</span><span aria-hidden="true">·</span><span>YEAR 1</span><span aria-hidden="true">·</span><span>GULF MEDICAL UNIVERSITY</span></p>
               <p className="hero-cover__statement">An evolving record of learning, research, and a growing interest in thoughtful, evidence-led care.</p>
               <div className="hero-cover__actions">
                 <a className="button button--primary" href="#home-profile">Enter portfolio <ArrowDown aria-hidden="true" /></a>
@@ -157,7 +157,7 @@ function PortfolioSite() {
             <div className="hero-profile__copy">
               <p className="eyebrow">ABOUT THE STUDENT</p>
               <h2 id="hero-profile-title">Curiosity, perspective, and care.</h2>
-              <p className="hero-profile__intro">A medical student with a growing interest in medicine, healthcare, research, and continuous learning.</p>
+              <p className="hero-profile__intro">A Year 1 Doctor of Medicine (MD Program) student at Gulf Medical University, with growing interests in medicine, healthcare, research, and continuous learning.</p>
               <div className="medical-pulse" aria-hidden="true">
                 <svg viewBox="0 0 94 24" fill="none"><path d="M1 12H28L35 12L41 5L47 19L54 8L60 12H93" /></svg>
               </div>
@@ -168,14 +168,18 @@ function PortfolioSite() {
                 <li>Patient-centered care</li>
                 <li>Continuous learning</li>
               </ul>
-              <div className="hero-profile__details"><span>STUDYING AT</span><strong>[University Name]</strong></div>
+              <dl className="hero-profile__details">
+                <div><dt>PROGRAMME</dt><dd>Doctor of Medicine (MD Program)</dd></div>
+                <div><dt>YEAR</dt><dd>Year 1</dd></div>
+                <div><dt>UNIVERSITY</dt><dd>Gulf Medical University</dd></div>
+              </dl>
               <a className="hero-profile__about-link" href="#about">Continue to about <ArrowRight aria-hidden="true" /></a>
             </div>
             <div className="hero-profile__visual">
               <figure className="portrait-frame">
                 <Image
                   src="/images/portfolio-portrait.png"
-                  alt="Replace with a professional portrait of [Your Name]"
+                  alt="Portrait placeholder for Madhumitha Nandagopal"
                   fill
                   priority
                   sizes="(max-width: 800px) 85vw, 42vw"
@@ -295,7 +299,7 @@ function PortfolioSite() {
         </section>
       </main>
       <footer className="site-footer page-width">
-        <a className="footer-wordmark" href="#home">[Your Name]<span>Medical student · [University Name]</span></a>
+        <a className="footer-wordmark" href="#home">Madhumitha Nandagopal<span>Doctor of Medicine (MD Program), Year 1 · Gulf Medical University</span></a>
         <p>Built with curiosity, and room to grow.</p>
         <a className="back-to-top" href="#home">Back to top <ArrowUpRight aria-hidden="true" /></a>
       </footer>

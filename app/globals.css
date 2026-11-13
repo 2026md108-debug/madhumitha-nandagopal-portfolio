@@ -90,9 +90,9 @@ svg { flex: 0 0 auto; }
 .status-dot { position: relative; width: 7px; height: 7px; border-radius: 50%; background: #858c5d; }
 .status-dot::after { position: absolute; inset: -4px; border: 1px solid var(--sage); border-radius: 50%; content: ''; opacity: .45; animation: status-pulse 3s ease-out infinite; }
 .medical-mark { position: absolute; top: 53%; right: clamp(14px, 4vw, 55px); display: grid; width: 78px; height: 78px; place-items: center; border: 1px solid rgb(135 151 128 / 42%); border-radius: 50%; color: var(--sage); font: 300 36px/1 var(--sans); animation: medical-mark-pulse 6s ease-in-out infinite; pointer-events: none; }
-.hero__name { margin: 0; color: var(--olive); font: 800 clamp(58px, 12vw, 148px)/.9 var(--sans); letter-spacing: -.085em; text-transform: uppercase; white-space: nowrap; }
+.hero__name { margin: 0; color: var(--olive); font: 800 clamp(58px, 9.5vw, 112px)/.92 var(--sans); letter-spacing: -.08em; text-transform: uppercase; white-space: normal; }
 .hero-cover__role { display: flex; align-items: center; gap: 12px; margin: 24px 0 0; color: var(--ink-soft); font-size: 11px; font-weight: 700; letter-spacing: .11em; }
-.hero-cover__role span:nth-child(2) { color: var(--olive); }
+.hero-cover__role span:nth-child(2), .hero-cover__role span:nth-child(4) { color: var(--olive); }
 .hero-cover__statement { max-width: 540px; margin: 21px 0 0; color: var(--muted-ink); font-size: 15px; line-height: 1.8; }
 .hero-cover__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 29px; }
 .button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 12px; font-size: 11px; font-weight: 650; transition: background .22s ease, color .22s ease, transform .22s ease; }
@@ -119,9 +119,10 @@ svg { flex: 0 0 auto; }
 .hero-profile__subhead { margin: 31px 0 12px; color: var(--olive); font-size: 8px; font-weight: 700; letter-spacing: .15em; }
 .hero-profile__interests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; margin: 0; padding: 0; list-style: none; }
 .hero-profile__interests li { padding: 10px 0; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 10px; font-weight: 600; }
-.hero-profile__details { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; margin-top: 25px; padding-top: 13px; border-top: 1px solid var(--line); }
-.hero-profile__details span { color: var(--muted-ink); font-size: 8px; font-weight: 700; letter-spacing: .12em; }
-.hero-profile__details strong { color: var(--ink-soft); font-size: 10px; font-weight: 600; }
+.hero-profile__details { display: grid; gap: 9px; margin: 25px 0 0; padding: 13px 0 0; border-top: 1px solid var(--line); }
+.hero-profile__details div { display: grid; grid-template-columns: 84px minmax(0, 1fr); align-items: baseline; gap: 10px; }
+.hero-profile__details dt { color: var(--muted-ink); font-size: 8px; font-weight: 700; letter-spacing: .12em; }
+.hero-profile__details dd { margin: 0; color: var(--ink-soft); font-size: 10px; font-weight: 600; }
 .hero-profile__about-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 23px; color: var(--olive); font-size: 10px; font-weight: 700; }
 .hero-profile__about-link svg { width: 13px; height: 13px; transition: transform .2s ease; }
 .hero-profile__about-link:hover svg { transform: translateX(3px); }
