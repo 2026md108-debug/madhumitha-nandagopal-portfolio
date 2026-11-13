@@ -16,7 +16,6 @@ import {
   credentials,
   navigation,
   projects,
-  skillGroups,
 } from '@/lib/portfolio-content'
 
 type SectionHeadingProps = {
@@ -257,27 +256,9 @@ function PortfolioSite() {
           </div>
         </section>
 
-        <section className="skills-section section-pad" id="skills" aria-labelledby="05-title">
+        <section className="activities-section section-pad" id="activities" aria-labelledby="05-title">
           <div className="page-width">
-            <SectionHeading number="05" eyebrow="SKILLS & INTERESTS" title="A toolkit in the making." description="A thoughtful mix of knowledge, practice, and the curiosity to keep growing." />
-            <div className="skills-layout">
-              <div className="skills-intro"><span className="skills-mark" aria-hidden="true">+</span><p>Everyone&apos;s path is different. Keep the skills and interests that reflect your own experience, and make this section yours.</p></div>
-              <div className="skill-groups">
-                {skillGroups.map((group) => (
-                  <div className="skill-group" key={group.name}>
-                    <div className="skill-group__heading"><h3>{group.name}</h3><span>{group.note}</span></div>
-                    <div className="skill-tags">{group.items.map((item) => <span key={item}>{item}</span>)}</div>
-                  </div>
-                ))}
-                <p className="skills-disclaimer">Suggested starting points—not a measure of proficiency.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="activities-section section-pad" id="activities" aria-labelledby="06-title">
-          <div className="page-width">
-            <SectionHeading number="06" eyebrow="BEYOND THE CLASSROOM" title="Learning happens everywhere." description="Experiences that build community, perspective, and a sense of responsibility beyond the lecture hall." />
+            <SectionHeading number="05" eyebrow="BEYOND THE CLASSROOM" title="Learning happens everywhere." description="Experiences that build community, perspective, and a sense of responsibility beyond the lecture hall." />
             <div className="activities-grid">
               {activities.map((activity, index) => (
                 <article className="activity-card" key={activity.id}>
@@ -297,7 +278,7 @@ function PortfolioSite() {
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
           <div className="page-width contact-inner">
             <div>
-              <p className="eyebrow"><span>07</span>CONTACT</p>
+              <p className="eyebrow"><span>06</span>CONTACT</p>
               <h2 id="contact-title">Good things begin<br />with a <em>conversation.</em></h2>
               <p className="contact-intro">For academic connections, research conversations, or a simple hello, I&apos;d be glad to hear from you.</p>
             </div>

@@ -220,20 +220,6 @@ svg { flex: 0 0 auto; }
 .text-link:hover { color: var(--olive); }
 .text-link svg { width: 12px; height: 12px; }
 
-.skills-section { background: var(--paper-bright); }
-.skills-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: 12%; }
-.skills-intro { display: flex; align-items: flex-start; gap: 16px; padding-top: 8px; }
-.skills-mark { display: grid; width: 33px; height: 33px; flex: 0 0 auto; place-items: center; border: 1px solid #c7d2d5; border-radius: 50%; color: var(--olive); font: 21px/1 var(--serif); }
-.skills-intro p { max-width: 255px; margin: 0; color: var(--muted-ink); font: 16px/1.8 var(--serif); }
-.skill-groups { display: flex; flex-direction: column; }
-.skill-group { display: grid; grid-template-columns: 175px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-.skill-group:first-child { padding-top: 0; }
-.skill-group__heading h3 { margin: 0; font: 18px var(--serif); }
-.skill-group__heading span { display: block; margin-top: 4px; color: var(--muted-ink); font-size: 7px; letter-spacing: .13em; }
-.skill-tags { display: flex; flex-wrap: wrap; align-content: center; gap: 7px; }
-.skill-tags span { padding: 6px 10px; border: 1px solid #dfe4e2; border-radius: 30px; color: #66704e; font-size: 9px; }
-.skills-disclaimer { align-self: flex-end; margin: 13px 0 0; color: var(--muted-ink); font-size: 9px; }
-
 .activities-section { background: #f2f3f0; }
 .activities-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
 .activity-card { position: relative; min-height: 240px; padding: 23px 22px; border: 1px solid #dce2df; background: rgb(251 250 247 / 50%); transition: transform .22s ease, background .22s ease; }
@@ -296,8 +282,6 @@ svg { flex: 0 0 auto; }
   .project-card__body { padding-inline: 16px; }
   .project-card h3 { font-size: 20px; }
   .project-card__body > p { min-height: 78px; }
-  .skills-layout { gap: 6%; }
-  .skill-group { grid-template-columns: 145px 1fr; }
   .contact-inner { column-gap: 7%; }
 }
 @media (max-width: 700px) {
@@ -338,7 +322,7 @@ svg { flex: 0 0 auto; }
   .section-heading .eyebrow { margin-bottom: 14px; }
   .section-heading h2 { max-width: 530px; font-size: clamp(27px, 7.8vw, 40px); }
   .section-heading__description { max-width: 500px; font-size: 11px; }
-  .about-grid, .skills-layout { grid-template-columns: 1fr; gap: 35px; }
+  .about-grid { grid-template-columns: 1fr; gap: 35px; }
   .about-lead { max-width: 540px; padding-left: 21px; }
   .about-lead p { font-size: 18px; }
   .about-details article { grid-template-columns: 31px 1fr; gap: 9px; padding-block: 16px; }
@@ -365,11 +349,6 @@ svg { flex: 0 0 auto; }
   .credential-card__type { margin-top: 16px; }
   .activity-card { min-height: 0; padding: 21px; }
   .activity-card__type { margin-top: 15px; }
-  .skills-intro { max-width: 430px; }
-  .skills-intro p { max-width: none; font-size: 15px; }
-  .skill-group { grid-template-columns: 1fr; gap: 12px; padding-block: 17px; }
-  .skill-tags { gap: 6px; }
-  .skill-tags span { font-size: 8px; }
   .contact-section { padding-top: 67px; }
   .contact-inner { grid-template-columns: 1fr; gap: 17px; }
   .contact-inner h2 { font-size: clamp(34px, 9.5vw, 50px); }

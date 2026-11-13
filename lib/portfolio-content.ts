@@ -3,7 +3,6 @@ export const navigation = [
   { id: 'competencies', label: 'Competencies' },
   { id: 'projects', label: 'Research' },
   { id: 'achievements', label: 'Achievements' },
-  { id: 'skills', label: 'Skills & interests' },
   { id: 'activities', label: 'Activities' },
   { id: 'contact', label: 'Contact' },
 ]
@@ -109,13 +108,6 @@ export const credentials: PortfolioCredential[] = [
   { id: 'certificate', type: 'CERTIFICATION', title: '[Certificate title]', issuer: '[Issuing organization]', date: '[Year]' },
   { id: 'workshop', type: 'WORKSHOP / SEMINAR', title: '[Workshop or seminar]', issuer: '[Organizing institution]', date: '[Year]' },
   { id: 'achievement', type: 'ACADEMIC ACHIEVEMENT', title: '[Award or accomplishment]', issuer: '[Institution or organization]', date: '[Year]' },
-]
-
-export const skillGroups = [
-  { name: 'Academic', note: 'KNOWLEDGE & STUDY', items: ['Evidence appraisal', 'Scientific writing', 'Literature review'] },
-  { name: 'Technical', note: 'TOOLS & METHODS', items: ['Research methods', 'Data literacy', 'Presentation design'] },
-  { name: 'Communication', note: 'WORKING WITH OTHERS', items: ['Active listening', 'Clear communication', 'Collaboration'] },
-  { name: 'Areas of interest', note: 'SUBJECTS TO EXPLORE', items: ['Clinical medicine', 'Public health', 'Medical research'] },
 ]
 
 export const activities: PortfolioActivity[] = [
