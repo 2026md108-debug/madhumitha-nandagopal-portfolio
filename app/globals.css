@@ -185,7 +185,6 @@ svg { flex: 0 0 auto; }
 .competency-folder__heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .competency-folder__heading h4 { margin: 0; font: 650 10px/1.4 var(--sans); }
 .competency-folder__heading > span { display: grid; min-width: 22px; height: 19px; place-items: center; border-radius: 99px; color: var(--folder-accent, var(--sage)); background: rgb(255 255 255 / 65%); font-size: 8px; font-weight: 700; }
-.competency-folder__content > p { margin: 3px 0 0; color: var(--muted-ink); font-size: 8px; line-height: 1.5; }
 .competency-folder__toggle { display: grid; width: 24px; height: 24px; place-items: center; border: 1px solid var(--sage-soft); border-radius: 50%; color: var(--folder-accent, var(--sage)); background: rgb(255 255 255 / 65%); }
 .competency-folder__toggle svg { width: 12px; height: 12px; transition: transform .2s ease; }
 .competency-folder[open] .competency-folder__toggle svg { transform: rotate(180deg); }
@@ -193,14 +192,12 @@ svg { flex: 0 0 auto; }
 .competency-folder__empty { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 6px; background: rgb(255 255 255 / 60%); }
 .competency-folder__empty-mark { display: grid; width: 25px; height: 25px; flex: 0 0 auto; place-items: center; border: 1px solid var(--sage-soft); border-radius: 50%; color: var(--folder-accent, var(--sage)); font-size: 16px; }
 .competency-folder__empty strong { color: var(--ink-soft); font-size: 9px; }
-.competency-folder__empty p { margin: 1px 0 0; color: var(--muted-ink); font-size: 8px; line-height: 1.5; }
 .competency-folder__entries { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
 .competency-folder__entries li { display: grid; gap: 4px; padding: 8px; border-radius: 6px; background: rgb(255 255 255 / 70%); font-size: 9px; }
 .competency-folder__entries li img { width: 100%; height: auto; object-fit: cover; }
 .competency-folder__entries li > span, .competency-folder__entries li > p { margin: 0; color: var(--muted-ink); font-size: 8px; }
 .competency-folder__entries li > a { display: inline-flex; align-items: center; gap: 4px; color: var(--olive); font-size: 8px; font-weight: 650; }
 .competency-folder__entries li > a svg { width: 11px; height: 11px; }
-.competency-domain__note, .competencies-note { margin: 21px 0 0; color: var(--muted-ink); font-size: 10px; line-height: 1.7; }
 @keyframes folder-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
 .projects-section { background: var(--paper); }

@@ -71,7 +71,6 @@ function CompetencyDomainCard({ domain }: { domain: (typeof competencyDomains)[n
               <span className="folder-mark" aria-hidden="true" />
               <div className="competency-folder__content">
                 <div className="competency-folder__heading"><h4>{folder.name}</h4><span>{folder.entries.length.toString().padStart(2, '0')}</span></div>
-                <p>{folder.description}</p>
               </div>
               <span className="competency-folder__toggle"><ArrowDown aria-hidden="true" /></span>
             </summary>
@@ -92,13 +91,12 @@ function CompetencyDomainCard({ domain }: { domain: (typeof competencyDomains)[n
               ) : (
                 <div className="competency-folder__empty">
                   <span className="competency-folder__empty-mark" aria-hidden="true">+</span>
-                  <div><strong>No entries yet</strong><p>Add your first reflection, project, or document here.</p></div>
+                  <div><strong>No entries yet</strong></div>
                 </div>
               )}
             </div>
           </details>
         ))}
-        <p className="competency-domain__note">Folders are ready for your reflections, coursework, evidence, and documents.</p>
       </div>
     </details>
   )
@@ -238,7 +236,6 @@ function PortfolioSite() {
             <div className="competencies-grid">
               {competencyDomains.map((domain) => <CompetencyDomainCard key={domain.id} domain={domain} />)}
             </div>
-            <p className="competencies-note">Every domain starts as a blank folder—add only experiences and achievements that are yours.</p>
           </div>
         </section>
 
