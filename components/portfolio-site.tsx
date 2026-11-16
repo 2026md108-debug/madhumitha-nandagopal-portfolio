@@ -71,6 +71,7 @@ function CompetencyDomainCard({ domain }: { domain: (typeof competencyDomains)[n
               <span className="folder-mark" aria-hidden="true" />
               <div className="competency-folder__content">
                 <div className="competency-folder__heading"><h4>{folder.name}</h4><span>{folder.entries.length.toString().padStart(2, '0')}</span></div>
+                <p className="competency-folder__description">{folder.description}</p>
               </div>
               <span className="competency-folder__toggle"><ArrowDown aria-hidden="true" /></span>
             </summary>
@@ -245,7 +246,6 @@ function PortfolioSite() {
             <div className="projects-grid">
               {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
             </div>
-            <p className="editor-note"><span aria-hidden="true">✳</span> Project details are placeholders—replace them with your own work and links.</p>
           </div>
         </section>
 
@@ -261,10 +261,9 @@ function PortfolioSite() {
                   ) : <span className="credential-card__icon" aria-hidden="true"><Award /></span>}
                   <p className="credential-card__type">{item.type}</p>
                   <h3>{item.title}</h3>
+                  <p className="credential-card__description">{item.description}</p>
                   <p className="credential-card__issuer">{item.issuer} <span>·</span> {item.date}</p>
-                  {item.documentUrl ? (
-                    <a className="text-link" href={item.documentUrl} target="_blank" rel="noreferrer">View certificate <ArrowUpRight aria-hidden="true" /></a>
-                  ) : <span className="credential-card__hint">Add a certificate, image, or document</span>}
+                  {item.documentUrl ? <a className="text-link" href={item.documentUrl} target="_blank" rel="noreferrer">View certificate <ArrowUpRight aria-hidden="true" /></a> : null}
                 </article>
               ))}
             </div>
