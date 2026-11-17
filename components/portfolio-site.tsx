@@ -151,14 +151,14 @@ function PortfolioSite() {
             <div className="hero-profile__visual">
               <figure className="portrait-frame">
                 <Image
-                  src="/images/portfolio-portrait.png"
-                  alt="Portrait placeholder for Madhumitha Nandagopal"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-11-17%20at%2012.19.40%20AM-HSGgvwJOmOdQByf9b1gFmM4p5mWsNY.jpeg"
+                  alt="Madhumitha Nandagopal in a white coat at Gulf Medical University"
                   fill
                   priority
                   sizes="(max-width: 800px) 85vw, 42vw"
                   className="portrait-frame__image"
                 />
-                <figcaption className="portrait-frame__label"><span>PROFILE IMAGE</span><span>REPLACE WITH YOUR PHOTO</span></figcaption>
+                <figcaption className="portrait-frame__label"><span>MEDICAL STUDENT</span><span>AJMAN, UNITED ARAB EMIRATES</span></figcaption>
               </figure>
             </div>
             <div className="hero-profile__footer">
@@ -263,7 +263,7 @@ function PortfolioSite() {
               <a href="mailto:2026md108@mygmu.ac.ae"><span className="contact-link__icon"><Mail aria-hidden="true" /></span><span><small>EMAIL</small>2026md108@mygmu.ac.ae</span><ArrowUpRight aria-hidden="true" /></a>
               <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer"><span className="contact-link__icon contact-link__icon--linkedin" aria-hidden="true">in</span><span><small>LINKEDIN</small>Connect professionally</span><ArrowUpRight aria-hidden="true" /></a>
             </div>
-            <div className="contact-bottom"><span>OPEN TO MEANINGFUL CONNECTIONS</span><span>City, Country</span></div>
+            <div className="contact-bottom"><span>OPEN TO MEANINGFUL CONNECTIONS</span><span>Ajman, United Arab Emirates</span></div>
           </div>
         </section>
       </main>

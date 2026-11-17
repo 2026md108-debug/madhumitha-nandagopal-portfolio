@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Award, ArrowRight, ArrowUpRight, HeartHandshake, HeartPulse, Stethoscope } from 'lucide-react'
+import CompetencyEventCarousel from '@/components/competency-event-carousel'
 import type { CompetencyEntry } from '@/lib/portfolio-content'
 
 type DetailMeta = {
@@ -31,37 +32,6 @@ const detailIcons = {
   research: HeartPulse,
   achievement: Award,
   activity: HeartHandshake,
-}
-
-function PortfolioEntryCard({ entry }: { entry: CompetencyEntry }) {
-  return (
-    <article className="detail-entry">
-      <div className="detail-entry__heading">
-        <h3>{entry.title}</h3>
-        {entry.date ? <time>{entry.date}</time> : null}
-      </div>
-      {entry.image ? <Image src={entry.image} alt={entry.imageAlt ?? ''} width={720} height={420} className="detail-entry__image" /> : null}
-      {entry.summary ? <p>{entry.summary}</p> : null}
-      <div className="detail-entry__links">
-        {entry.documentUrl ? <a href={entry.documentUrl} target="_blank" rel="noreferrer">Open document <ArrowUpRight aria-hidden="true" /></a> : null}
-        {entry.href ? <a href={entry.href} target="_blank" rel="noreferrer">View related item <ArrowUpRight aria-hidden="true" /></a> : null}
-      </div>
-    </article>
-  )
-}
-
-function CompetencyParticipationArea({ entries }: { entries: CompetencyEntry[] }) {
-  return (
-    <section className="detail-page__participation" aria-label="Competency participation records">
-      <div className="detail-page__participation-label" aria-hidden="true">
-        <HeartPulse />
-        <span>PARTICIPATION RECORD</span>
-      </div>
-      {entries.length ? (
-        <div className="detail-entry-list">{entries.map((entry) => <PortfolioEntryCard key={entry.id} entry={entry} />)}</div>
-      ) : <p className="detail-page__empty">No participation records yet.</p>}
-    </section>
-  )
 }
 
 export default function PortfolioDetailPage({ detail }: { detail: PortfolioDetailPageProps }) {
@@ -100,7 +70,7 @@ export default function PortfolioDetailPage({ detail }: { detail: PortfolioDetai
 
         {isCompetency ? (
           <>
-            <CompetencyParticipationArea entries={detail.events ?? []} />
+            <CompetencyEventCarousel events={detail.events ?? []} />
             <section className="detail-page__section detail-page__reflection" aria-labelledby="reflection-title">
               <p className="eyebrow">CLOSING REFLECTION</p>
               <h2 id="reflection-title">Reflection report</h2>
