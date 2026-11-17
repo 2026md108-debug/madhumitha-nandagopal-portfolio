@@ -127,6 +127,8 @@ export const competencyDomains = competencyDomainDetails.map((domain) => ({
     id: `${domain.id}-${folder.id}`,
     entries: [] as CompetencyEntry[],
   })),
+  events: [] as CompetencyEntry[],
+  reflectionReport: '',
 }))
 
 export type PortfolioProject = {

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   ArrowDown,
   ArrowRight,
@@ -57,49 +58,14 @@ function SiteHeader() {
 
 function CompetencyDomainCard({ domain }: { domain: (typeof competencyDomains)[number] }) {
   return (
-    <details className="competency-domain">
-      <summary className="competency-domain__summary">
+    <Link className="competency-domain" href={`/competencies/${domain.id}`} aria-label={`Open ${domain.name} competency`}>
+      <div className="competency-domain__summary">
         <div className="competency-domain__meta"><span>{domain.code}</span><span>{domain.folders.length} FOLDERS</span></div>
         <h3>{domain.name}</h3>
         <p>{domain.description}</p>
-        <span className="competency-domain__action">Explore folders <ArrowDown aria-hidden="true" /></span>
-      </summary>
-      <div className="competency-domain__folders">
-        {domain.folders.map((folder) => (
-          <details className="competency-folder" key={folder.id}>
-            <summary className="competency-folder__summary">
-              <span className="folder-mark" aria-hidden="true" />
-              <div className="competency-folder__content">
-                <div className="competency-folder__heading"><h4>{folder.name}</h4><span>{folder.entries.length.toString().padStart(2, '0')}</span></div>
-                <p className="competency-folder__description">{folder.description}</p>
-              </div>
-              <span className="competency-folder__toggle"><ArrowDown aria-hidden="true" /></span>
-            </summary>
-            <div className="competency-folder__body">
-              {folder.entries.length ? (
-                <ul className="competency-folder__entries">
-                  {folder.entries.map((entry) => (
-                    <li key={entry.id}>
-                      {entry.image ? <Image src={entry.image} alt={entry.imageAlt ?? ''} width={240} height={140} /> : null}
-                      <strong>{entry.title}</strong>
-                      {entry.date ? <span>{entry.date}</span> : null}
-                      {entry.summary ? <p>{entry.summary}</p> : null}
-                      {entry.documentUrl ? <a href={entry.documentUrl} target="_blank" rel="noreferrer">Open document <ArrowUpRight aria-hidden="true" /></a> : null}
-                      {entry.href ? <a href={entry.href} target="_blank" rel="noreferrer">View entry <ArrowUpRight aria-hidden="true" /></a> : null}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <div className="competency-folder__empty">
-                  <span className="competency-folder__empty-mark" aria-hidden="true">+</span>
-                  <div><strong>No entries yet</strong></div>
-                </div>
-              )}
-            </div>
-          </details>
-        ))}
+        <span className="competency-domain__action">Open domain <ArrowUpRight aria-hidden="true" /></span>
       </div>
-    </details>
+    </Link>
   )
 }
 
@@ -107,7 +73,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
   const ProjectIcon = index === 0 ? BookOpen : index === 1 ? Microscope : ClipboardList
 
   return (
-    <article className="project-card">
+    <Link className="project-card" href={`/research/${project.id}`} aria-label={`Open ${project.title}`}>
       <div className={`project-art project-art--${index + 1}`}>
         {project.image ? (
           <Image src={project.image} alt={project.imageAlt ?? ''} fill sizes="(max-width: 720px) 100vw, 33vw" />
@@ -126,14 +92,10 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
         <p>{project.description}</p>
         <div className="project-card__footer">
           <span>{project.subject}</span>
-          {project.href ? (
-            <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title}`}>
-              <ArrowUpRight aria-hidden="true" />
-            </a>
-          ) : <span className="project-card__arrow" aria-hidden="true"><ArrowRight /></span>}
+          <span className="project-card__arrow" aria-hidden="true"><ArrowRight /></span>
         </div>
       </div>
-    </article>
+    </Link>
   )
 }
 
@@ -254,7 +216,7 @@ function PortfolioSite() {
             <SectionHeading number="04" eyebrow="CERTIFICATIONS & ACHIEVEMENTS" title="Milestones, large and small." description="A place to gather certificates, awards, workshops, seminars, and moments of academic growth." />
             <div className="credentials-grid">
               {credentials.map((item, index) => (
-                <article className="credential-card" key={item.id}>
+                <Link className="credential-card" href={`/achievements/${item.id}`} key={item.id} aria-label={`Open ${item.title}`}>
                   <span className="credential-card__number">0{index + 1}</span>
                   {item.image ? (
                     <div className="credential-card__preview"><Image src={item.image} alt={item.imageAlt ?? `${item.title} image`} fill sizes="(max-width: 700px) 100vw, 33vw" /></div>
@@ -263,8 +225,8 @@ function PortfolioSite() {
                   <h3>{item.title}</h3>
                   <p className="credential-card__description">{item.description}</p>
                   <p className="credential-card__issuer">{item.issuer} <span>·</span> {item.date}</p>
-                  {item.documentUrl ? <a className="text-link" href={item.documentUrl} target="_blank" rel="noreferrer">View certificate <ArrowUpRight aria-hidden="true" /></a> : null}
-                </article>
+                  <span className="text-link">View details <ArrowUpRight aria-hidden="true" /></span>
+                </Link>
               ))}
             </div>
           </div>
@@ -275,15 +237,15 @@ function PortfolioSite() {
             <SectionHeading number="05" eyebrow="BEYOND THE CLASSROOM" title="Learning happens everywhere." description="Experiences that build community, perspective, and a sense of responsibility beyond the lecture hall." />
             <div className="activities-grid">
               {activities.map((activity, index) => (
-                <article className="activity-card" key={activity.id}>
+                <Link className="activity-card" href={`/activities/${activity.id}`} key={activity.id} aria-label={`Open ${activity.title}`}>
                   <span className="activity-card__index">0{index + 1}</span>
                   <span className="activity-card__icon" aria-hidden="true"><HeartHandshake /></span>
                   <p className="activity-card__type">{activity.type}</p>
                   <h3>{activity.title}</h3>
                   <p className="activity-card__description">{activity.description}</p>
                   <span className="activity-card__date">{activity.date}</span>
-                  {activity.certificateUrl ? <a className="text-link activity-card__certificate" href={activity.certificateUrl} target="_blank" rel="noreferrer">View participation certificate <ArrowUpRight aria-hidden="true" /></a> : null}
-                </article>
+                  <span className="text-link activity-card__certificate">View details <ArrowUpRight aria-hidden="true" /></span>
+                </Link>
               ))}
             </div>
           </div>
