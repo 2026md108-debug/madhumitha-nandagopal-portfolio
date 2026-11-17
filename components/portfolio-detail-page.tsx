@@ -1,14 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { Award, ArrowRight, ArrowUpRight, HeartHandshake, HeartPulse, Stethoscope } from 'lucide-react'
 import type { CompetencyEntry } from '@/lib/portfolio-content'
-
-type PortfolioFolder = {
-  id: string
-  name: string
-  description: string
-  entries: CompetencyEntry[]
-}
 
 type DetailMeta = {
   label: string
@@ -29,9 +22,15 @@ export type PortfolioDetailPageProps = {
     href: string
     label: string
   }
-  folders?: PortfolioFolder[]
   events?: CompetencyEntry[]
   reflectionReport?: string
+}
+
+const detailIcons = {
+  competency: Stethoscope,
+  research: HeartPulse,
+  achievement: Award,
+  activity: HeartHandshake,
 }
 
 function PortfolioEntryCard({ entry }: { entry: CompetencyEntry }) {
@@ -51,19 +50,22 @@ function PortfolioEntryCard({ entry }: { entry: CompetencyEntry }) {
   )
 }
 
-function EntryCollection({ title, entries, emptyMessage }: { title: string; entries: CompetencyEntry[]; emptyMessage: string }) {
+function CompetencyParticipationArea({ entries }: { entries: CompetencyEntry[] }) {
   return (
-    <section className="detail-page__section" aria-label={title}>
-      <p className="eyebrow">PORTFOLIO RECORD</p>
-      <h2>{title}</h2>
+    <section className="detail-page__participation" aria-label="Competency participation records">
+      <div className="detail-page__participation-label" aria-hidden="true">
+        <HeartPulse />
+        <span>PARTICIPATION RECORD</span>
+      </div>
       {entries.length ? (
         <div className="detail-entry-list">{entries.map((entry) => <PortfolioEntryCard key={entry.id} entry={entry} />)}</div>
-      ) : <p className="detail-page__empty">{emptyMessage}</p>}
+      ) : <p className="detail-page__empty">No participation records yet.</p>}
     </section>
   )
 }
 
 export default function PortfolioDetailPage({ detail }: { detail: PortfolioDetailPageProps }) {
+  const DetailIcon = detailIcons[detail.kind]
   const isCompetency = detail.kind === 'competency'
 
   return (
@@ -76,7 +78,10 @@ export default function PortfolioDetailPage({ detail }: { detail: PortfolioDetai
 
         <header className="detail-page__hero">
           <p className="eyebrow">{detail.category}</p>
-          <h1>{detail.title}</h1>
+          <div className="detail-page__title-row">
+            <h1>{detail.title}</h1>
+            <span className="detail-page__medical-icon" aria-hidden="true"><DetailIcon /></span>
+          </div>
           <p className="detail-page__description">{detail.description}</p>
           {detail.metadata?.length ? (
             <dl className="detail-page__metadata">
@@ -95,30 +100,7 @@ export default function PortfolioDetailPage({ detail }: { detail: PortfolioDetai
 
         {isCompetency ? (
           <>
-            <section className="detail-page__section" aria-labelledby="detail-folders-title">
-              <p className="eyebrow">DOMAIN ARCHIVE</p>
-              <h2 id="detail-folders-title">Folders &amp; evidence</h2>
-              <div className="detail-folder-list">
-                {detail.folders?.map((folder) => (
-                  <details className="detail-folder" key={folder.id}>
-                    <summary>
-                      <span className="folder-mark" aria-hidden="true" />
-                      <span className="detail-folder__title"><strong>{folder.name}</strong><small>{folder.description}</small></span>
-                      <span className="detail-folder__count">{folder.entries.length.toString().padStart(2, '0')}</span>
-                      <ArrowDown aria-hidden="true" />
-                    </summary>
-                    <div className="detail-folder__body">
-                      {folder.entries.length ? (
-                        <div className="detail-entry-list">{folder.entries.map((entry) => <PortfolioEntryCard key={entry.id} entry={entry} />)}</div>
-                      ) : <p className="detail-page__empty">No entries yet.</p>}
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </section>
-
-            <EntryCollection title="Events & participation" entries={detail.events ?? []} emptyMessage="No events recorded yet." />
-
+            <CompetencyParticipationArea entries={detail.events ?? []} />
             <section className="detail-page__section detail-page__reflection" aria-labelledby="reflection-title">
               <p className="eyebrow">CLOSING REFLECTION</p>
               <h2 id="reflection-title">Reflection report</h2>

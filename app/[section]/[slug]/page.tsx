@@ -25,7 +25,6 @@ function getPortfolioDetail(section: string, slug: string): PortfolioDetailPageP
       title: domain.name,
       description: domain.description,
       metadata: [{ label: 'Domain', value: domain.name }],
-      folders: domain.folders,
       events: domain.events,
       reflectionReport: domain.reflectionReport,
     }

@@ -8,8 +8,10 @@ import {
   BookOpen,
   ClipboardList,
   HeartHandshake,
+  HeartPulse,
   Mail,
   Microscope,
+  Stethoscope,
 } from 'lucide-react'
 import {
   activities,
@@ -60,7 +62,7 @@ function CompetencyDomainCard({ domain }: { domain: (typeof competencyDomains)[n
   return (
     <Link className="competency-domain" href={`/competencies/${domain.id}`} aria-label={`Open ${domain.name} competency`}>
       <div className="competency-domain__summary">
-        <div className="competency-domain__meta"><span>{domain.code}</span><span>{domain.folders.length} FOLDERS</span></div>
+        <div className="competency-domain__meta"><span>{domain.code}</span><span>COMPETENCY</span></div>
         <h3>{domain.name}</h3>
         <p>{domain.description}</p>
         <span className="competency-domain__action">Open domain <ArrowUpRight aria-hidden="true" /></span>
@@ -117,7 +119,7 @@ function PortfolioSite() {
                 <a className="button button--text" href="#contact">Contact me <ArrowUpRight aria-hidden="true" /></a>
               </div>
             </div>
-            <span className="medical-mark" aria-hidden="true">+</span>
+            <span className="medical-mark" aria-hidden="true"><Stethoscope /><HeartPulse className="medical-mark__heart" /></span>
             <div className="hero-cover__footer">
               <span>MEDICINE · RESEARCH · LEARNING</span>
               <a href="#home-profile">CONTINUE <ArrowDown aria-hidden="true" /></a>
@@ -132,7 +134,7 @@ function PortfolioSite() {
               <div className="medical-pulse" aria-hidden="true">
                 <svg viewBox="0 0 94 24" fill="none"><path d="M1 12H28L35 12L41 5L47 19L54 8L60 12H93" /></svg>
               </div>
-              <h3 className="hero-profile__subhead">AREAS OF INTEREST</h3>
+              <h3 className="hero-profile__subhead">Areas of interest</h3>
               <ul className="hero-profile__interests">
                 <li>Medicine &amp; healthcare</li>
                 <li>Research &amp; evidence</li>
@@ -171,9 +173,8 @@ function PortfolioSite() {
             <SectionHeading number="01" eyebrow="A LITTLE ABOUT ME" title="A human perspective. A curious mind." description="Medicine brings together the questions I love asking and the people I hope to serve. This is the beginning of that story." />
             <div className="about-grid">
               <div className="about-lead">
-                <span className="decorative-quote" aria-hidden="true">“</span>
                 <p>My interest in medicine grows from the meeting point of science and human experience. I&apos;m drawn to a field where careful listening, evidence, and compassion all matter.</p>
-                <span className="about-lead__caption">A perspective in progress</span>
+                <span className="about-lead__caption"><HeartPulse aria-hidden="true" /> A perspective in progress</span>
               </div>
               <div className="about-details">
                 <article>
@@ -195,7 +196,7 @@ function PortfolioSite() {
 
         <section className="competencies-section section-pad" id="competencies" aria-labelledby="02-title">
           <div className="page-width">
-            <SectionHeading number="02" eyebrow="COMPETENCIES" title="Nine domains. One evolving portfolio." description="A flexible framework inspired by the reference portfolio. Open a domain to explore its folders, then add your own reflections and evidence over time." />
+            <SectionHeading number="02" eyebrow="COMPETENCIES" title="Nine domains. One evolving portfolio." description="Open a domain to view its participation record and closing reflection." />
             <div className="competencies-grid">
               {competencyDomains.map((domain) => <CompetencyDomainCard key={domain.id} domain={domain} />)}
             </div>
