@@ -79,29 +79,14 @@ const competencyEvents: Record<string, CompetencyEntry[]> = {
     {
       id: 'patient-assessment-practice',
       title: 'Clinical practice session',
-      imageLayout: 'side-by-side',
-      images: [
-        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7F49BDE8-D87D-48AF-B276-309A70010FFD.JPG-iKfkClrxF1eYKx6OJ40RemVqbVoywi.jpeg', alt: 'Clinical skills practice with a patient and supervising clinician' },
-        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0167-EECUzArJY9UMtlxLmjw7BQnPgooOc1.jpeg', alt: 'Madhumitha practicing a clinical procedure with a peer' },
-      ],
     },
     {
       id: 'clinical-procedure-practice',
       title: 'Clinical procedure practice',
-      imageLayout: 'stacked',
-      images: [
-        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/E52A024E-5F28-4471-B38B-DDFE84C03620.JPG-z56mPSSIviAPW4uGRkdd8K3vJhtx5x.jpeg', alt: 'Clinical procedure practice with a supervising clinician' },
-        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/B7430A71-DBF6-489A-A037-2685C1BE2FC6.JPG-boVRODIq6x0wEXrlrTVhiyti1NUo4x.jpeg', alt: 'Close view of a clinical procedure practice session' },
-      ],
     },
     {
       id: 'laboratory-sample-practice',
       title: 'Laboratory sample practice',
-      imageLayout: 'side-by-side',
-      images: [
-        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0178-txYBFfHb2bmtmemYn43gX0dmTW67f2.jpeg', alt: 'Madhumitha reviewing a laboratory sample during a practical session' },
-        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9946-FaQUTb53FuIpuClMRYwKyjpC2XYiOW.jpeg', alt: 'Close view of sample drops arranged on glass slides' },
-      ],
     },
   ],
 }
