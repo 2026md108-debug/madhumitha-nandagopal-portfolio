@@ -126,7 +126,7 @@ This experience made me realise that organising an event involves much more than
 Overall, it was an enjoyable and educational experience that taught me about teamwork, responsibility and organisation. Despite the challenges, I am glad we got the opportunity to manage an event ourselves. It helped me recognise my strengths and the areas I need to improve on for future experiences.
 
 6. Action Plan
-For future events, I would focus on planning in greater detail, assigning responsibilities in advance and designing a better system for managing crowds. I should also make sure not to underestimate the number of people who might attend, as that was one of our biggest flaws this time. I would also make an effort to improve my public speaking skills. I hope to take up similar responsibilities in the future and use what I learned to become more confident, organised and effective when working with others.` 
+For future events, I would focus on planning in greater detail, assigning responsibilities in advance and designing a better system for managing crowds. I should also make sure not to underestimate the number of people who might attend, as that was one of our biggest flaws this time. I would also make an effort to improve my public speaking skills. I hope to take up similar responsibilities in the future and use what I learned to become more confident, organised and effective when working with others.` : '',
 }))
 
 export type PortfolioProject = {
