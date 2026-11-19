@@ -27,6 +27,12 @@ function getPortfolioDetail(section: string, slug: string): PortfolioDetailPageP
       metadata: [{ label: 'Domain', value: domain.name }],
       events: domain.events,
       reflectionReport: domain.reflectionReport,
+      previousCompetency: competencyDomains[competencyDomains.findIndex((item) => item.id === slug) - 1]
+        ? { title: competencyDomains[competencyDomains.findIndex((item) => item.id === slug) - 1].name, href: `/competencies/${competencyDomains[competencyDomains.findIndex((item) => item.id === slug) - 1].id}` }
+        : undefined,
+      nextCompetency: competencyDomains[competencyDomains.findIndex((item) => item.id === slug) + 1]
+        ? { title: competencyDomains[competencyDomains.findIndex((item) => item.id === slug) + 1].name, href: `/competencies/${competencyDomains[competencyDomains.findIndex((item) => item.id === slug) + 1].id}` }
+        : undefined,
     }
   }
 
