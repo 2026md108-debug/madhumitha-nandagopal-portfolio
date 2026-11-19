@@ -74,7 +74,7 @@ export default function PortfolioDetailPage({ detail }: { detail: PortfolioDetai
             <section className="detail-page__section detail-page__reflection" aria-labelledby="reflection-title">
               <p className="eyebrow">CLOSING REFLECTION</p>
               <h2 id="reflection-title">Reflection report</h2>
-              {detail.reflectionReport ? <p>{detail.reflectionReport}</p> : <p className="detail-page__empty">No reflection report recorded yet.</p>}
+              {detail.reflectionReport ? <p style={{ whiteSpace: 'pre-line' }}>{detail.reflectionReport}</p> : <p className="detail-page__empty">No reflection report recorded yet.</p>}
             </section>
           </>
         ) : detail.resource ? (
