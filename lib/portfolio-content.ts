@@ -41,9 +41,9 @@ const competencyEvents: Record<string, CompetencyEntry[]> = {
   'collaborator-innovator-leader': [
     {
       id: 'world-anatomy-day-plank-competition',
-      title: 'World Anatomy Day · Plank Competition',
-      date: '15 October 2026 · Library Foyer, Gulf Medical University',
-      summary: 'A peer-organised plank competition designed to engage students while demonstrating the abdominal muscles involved in the exercise. My contributions included planning, preparing the display boards, and managing the competition leaderboard.',
+      title: 'World Anatomy Day',
+      date: '15 OCTOBER 2026',
+      summary: 'I was part of a team that organised a World Anatomy Day event at GMU, where we conducted a plank competition to demonstrate the abdominal muscles involved. I helped with the planning, display boards and leaderboard management, ensuring everyone got their turn and scores were recorded fairly. Seeing so many students participate and enjoy our event made me feel happy and proud of our efforts. It was a fun and memorable experience that taught me the importance of teamwork, responsibility and confidence.',
       imageLayout: 'editorial',
       images: [
         { src: '/images/world-anatomy-day-team.jpg', alt: 'The student team holding the World Anatomy Day banner at Gulf Medical University' },
@@ -110,17 +110,23 @@ export const competencyDomains = competencyDomainDetails.map((domain) => ({
   ...domain,
   status: domain.id === 'collaborator-innovator-leader' ? 'completed' as const : undefined,
   events: competencyEvents[domain.id] ?? [],
-  reflectionReport: domain.id === 'collaborator-innovator-leader' ? `On 15 October 2026, I took part in the World Anatomy Day event at GMU. It was my first experience organising a stall independently with my peers. Our team organised a plank competition to demonstrate the abdominal muscles involved in that particular exercise. My contributions included participating in planning, preparing the display boards and managing the leaderboard. I volunteered to handle the leaderboard, which kept track of participants, making sure everyone got their turn and recording results fairly. I also had to coordinate with my teammates to keep all activities running smoothly.
+  reflectionReport: domain.id === 'collaborator-innovator-leader' ? `1. Description
+On 15 October 2026, I took part in the World Anatomy Day event at GMU. It was my first experience organising a stall independently with my peers. Our team organised a plank competition to demonstrate the abdominal muscles involved in that particular exercise. My contributions included participating in planning, preparing the display boards and managing the leaderboard. I volunteered to handle the leaderboard, which kept track of participants, making sure everyone got their turn and recording results fairly. I also had to coordinate with my teammates to keep all activities running smoothly.
 
+2. Feelings
 At first, I looked forward to this new experience, but I was also unsure about how well I would manage my responsibilities. At times, keeping up with everything happening was quite challenging, particularly when the area became crowded. One instance was when multiple people started asking me questions and, since my teammates were busy entertaining other people, I couldn’t answer everyone properly. However, I somehow managed to respond to all of them since they were, thankfully, patient with me. Despite this, I enjoyed being involved and felt satisfied seeing our efforts come together. The interest shown by all visitors made me feel that our hard work had paid off, even though there were things we could have handled better.
 
+3. Evaluation
 One of the best parts of the experience was seeing everyone work together towards a common goal. I particularly enjoyed taking responsibility for the leaderboard and coordinating between different activities. However, managing the increasing crowd and occasional interruptions in communication were challenging. Although the event did not go exactly as planned, I feel we managed it reasonably well for our first independently organised activity.
 
+4. Analysis
 This experience made me realise that organising an event involves much more than completing individual responsibilities. Every role is connected, and communication and teamwork are essential to run things smoothly. Managing the leaderboard helped me understand the importance of taking initiative, being responsible and ensuring fairness. I also realised that my communication skills, particularly my public speaking skills, need improvement. Due to my anxiety and stage fright, interacting confidently with larger groups is somewhat difficult for me.
 
+5. Conclusion
 Overall, it was an enjoyable and educational experience that taught me about teamwork, responsibility and organisation. Despite the challenges, I am glad we got the opportunity to manage an event ourselves. It helped me recognise my strengths and the areas I need to improve on for future experiences.
 
-For future events, I would focus on planning in greater detail, assigning responsibilities in advance and designing a better system for managing crowds. I should also make sure not to underestimate the number of people who might attend, as that was one of our biggest flaws this time. I would also make an effort to improve my public speaking skills. I hope to take up similar responsibilities in the future and use what I learned to become more confident, organised and effective when working with others.` : ''
+6. Action Plan
+For future events, I would focus on planning in greater detail, assigning responsibilities in advance and designing a better system for managing crowds. I should also make sure not to underestimate the number of people who might attend, as that was one of our biggest flaws this time. I would also make an effort to improve my public speaking skills. I hope to take up similar responsibilities in the future and use what I learned to become more confident, organised and effective when working with others.` 
 }))
 
 export type PortfolioProject = {
