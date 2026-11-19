@@ -323,7 +323,7 @@ svg { flex: 0 0 auto; }
 .detail-page__reflection-sections { display: grid; gap: 22px; }
 .detail-page__reflection-section { padding-top: 18px; border-top: 1px solid var(--sage-soft); }
 .detail-page__reflection-section:first-child { padding-top: 8px; border-top: 0; }
-.detail-page__reflection-section h3 { margin: 0 0 8px; color: var(--ink); font-family: var(--font-display); font-size: clamp(23px, 2.4vw, 30px); font-weight: 500; }
+.detail-page__reflection-section h3 { margin: 0 0 8px; color: var(--ink); font-family: var(--font-display); font-size: clamp(18px, 1.7vw, 21px); font-weight: 600; }
 .detail-page__reflection-section p { margin: 0; color: var(--muted-ink); font-size: calc(16px + var(--text-size-bump)); line-height: 1.8; white-space: pre-line; }
 
 .detail-page__resource { padding: 11px 15px; border: 1px solid var(--sage-soft); border-radius: 999px; background: var(--paper-bright); }
@@ -477,4 +477,17 @@ svg { flex: 0 0 auto; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+.competency-step-nav { display: flex; align-items: stretch; justify-content: space-between; gap: 16px; margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--line); }
+.competency-step-nav__link { display: inline-flex; max-width: 48%; align-items: center; gap: 12px; color: var(--olive); font-size: calc(15px + var(--text-size-bump)); font-weight: 650; line-height: 1.35; }
+.competency-step-nav__link span { display: grid; gap: 5px; }
+.competency-step-nav__link small { color: var(--muted-ink); font-size: 10px; letter-spacing: .13em; }
+.competency-step-nav__link svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.competency-step-nav__link--previous svg { transform: rotate(180deg); }
+.competency-step-nav__link--next { margin-left: auto; text-align: right; }
+.competency-step-nav__link:hover { color: var(--forest); }
+@media (max-width: 600px) {
+  .competency-step-nav { gap: 10px; }
+  .competency-step-nav__link { max-width: 49%; font-size: 13px; }
 }
