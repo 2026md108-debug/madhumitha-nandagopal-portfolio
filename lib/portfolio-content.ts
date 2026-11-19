@@ -156,9 +156,39 @@ export const projects: PortfolioProject[] = [
 ]
 
 export const credentials: PortfolioCredential[] = [
-  { id: 'certificate', type: 'CERTIFICATION', title: 'Certificate title', description: 'Professional training and certification records.', issuer: 'Issuing organization', date: 'Year' },
-  { id: 'workshop', type: 'WORKSHOP / SEMINAR', title: 'Workshop or seminar', description: 'Seminars and workshops connected to medical learning.', issuer: 'Organizing institution', date: 'Year' },
-  { id: 'achievement', type: 'ACADEMIC ACHIEVEMENT', title: 'Award or accomplishment', description: 'Recognition of academic progress and accomplishments.', issuer: 'Institution or organization', date: 'Year' },
+  {
+    id: 'hayat-participation',
+    type: 'CERTIFICATION',
+    title: 'Hayat Program · Certificate of Participation',
+    description: 'Certificate of participation in the Hayat Program.',
+    issuer: 'Gulf Medical University',
+    date: '2026',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1264-WgViI4T3sPeEHwi4nTGOiUJq2YuJGQ.jpg',
+    imageAlt: 'Gulf Medical University Certificate of Participation for the Hayat Program awarded to Madhumitha Nandagopal',
+    documentUrl: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1264-WgViI4T3sPeEHwi4nTGOiUJq2YuJGQ.jpg',
+  },
+  {
+    id: 'mena-metabolism-congress',
+    type: 'WORKSHOP / SEMINAR',
+    title: '3rd MENA Congress for Metabolism',
+    description: 'Certificate of attendance at the congress in Dubai.',
+    issuer: 'MENA Organization for Rare Diseases',
+    date: '02–03 October 2026',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0429-u6vjwRS5i7U92bmEPMMQD3dynXY6bV.jpg',
+    imageAlt: 'Certificate of Attendance for the 3rd MENA Congress for Metabolism in Health and Disease 2026',
+    documentUrl: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0429-u6vjwRS5i7U92bmEPMMQD3dynXY6bV.jpg',
+  },
+  {
+    id: 'hayat-appreciation',
+    type: 'ACADEMIC ACHIEVEMENT',
+    title: 'Hayat Program · Certificate of Appreciation',
+    description: 'Recognition for contribution to the Hayat Program.',
+    issuer: 'Ministry of Health and Prevention',
+    date: '30 September 2026',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1263-hAEH1fvhN4VRfsnjnDRBZzwmEowwUC.jpg',
+    imageAlt: 'Ministry of Health and Prevention Certificate of Appreciation for contribution to the Hayat Program',
+    documentUrl: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1263-hAEH1fvhN4VRfsnjnDRBZzwmEowwUC.jpg',
+  },
 ]
 
 export const activities: PortfolioActivity[] = [
