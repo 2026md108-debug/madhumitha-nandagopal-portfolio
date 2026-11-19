@@ -62,7 +62,7 @@ function CompetencyDomainCard({ domain }: { domain: (typeof competencyDomains)[n
   return (
     <Link className="competency-domain" href={`/competencies/${domain.id}`} aria-label={`Open ${domain.name} competency`}>
       <div className="competency-domain__summary">
-        <div className="competency-domain__meta"><span>{domain.code}</span><span>COMPETENCY</span></div>
+        <div className="competency-domain__meta"><span>{domain.code}</span>{domain.status === 'completed' ? <span className="competency-domain__status">COMPLETED</span> : <span>COMPETENCY</span>}</div>
         <h3>{domain.name}</h3>
         <p>{domain.description}</p>
         <span className="competency-domain__action">Open domain <ArrowUpRight aria-hidden="true" /></span>
