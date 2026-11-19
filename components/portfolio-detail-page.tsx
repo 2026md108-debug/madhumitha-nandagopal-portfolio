@@ -76,12 +76,12 @@ export default function PortfolioDetailPage({ detail }: { detail: PortfolioDetai
               <h2 id="reflection-title">Reflection report</h2>
               {detail.reflectionReport ? (
                 <div className="detail-page__reflection-sections">
-                  {detail.reflectionReport.split(/(?=^\\d+\\.\\s)/m).filter(Boolean).map((section) => {
-                    const [heading, ...paragraph] = section.trim().split('\\n')
+                  {detail.reflectionReport.split(/(?=^\d+\.\s)/m).filter(Boolean).map((section) => {
+                    const [heading, ...paragraph] = section.trim().split('\n')
                     return (
                       <div className="detail-page__reflection-section" key={heading}>
                         <h3>{heading}</h3>
-                        <p>{paragraph.join('\\n').trim()}</p>
+                        <p>{paragraph.join('\n').trim()}</p>
                       </div>
                     )
                   })}
