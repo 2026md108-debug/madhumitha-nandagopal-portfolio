@@ -214,20 +214,25 @@ function PortfolioSite() {
 
         <section className="achievements-section section-pad" id="achievements" aria-labelledby="04-title">
           <div className="page-width">
-            <SectionHeading number="04" eyebrow="CERTIFICATIONS & ACHIEVEMENTS" title="Milestones, large and small." description="A place to gather certificates, awards, workshops, seminars, and moments of academic growth." />
+            <SectionHeading number="04" eyebrow="CERTIFICATE ARCHIVE" title="Certificates and recognition" />
             <div className="credentials-grid">
-              {credentials.map((item, index) => (
-                <Link className="credential-card" href={`/achievements/${item.id}`} key={item.id} aria-label={`Open ${item.title}`}>
-                  <span className="credential-card__number">0{index + 1}</span>
+              {[...credentials].sort((a, b) => {
+                const order = ['hayat-appreciation', 'mena-metabolism-congress', 'hayat-participation']
+                return order.indexOf(a.id) - order.indexOf(b.id)
+              }).map((item) => (
+                <a className="credential-card" href={item.documentUrl ?? item.image ?? '#'} target="_blank" rel="noreferrer" key={item.id} aria-label={`View ${item.title}`} style={{ padding: 0 }}>
                   {item.image ? (
-                    <div className="credential-card__preview"><Image src={item.image} alt={item.imageAlt ?? `${item.title} image`} fill sizes="(max-width: 700px) 100vw, 33vw" /></div>
+                    <div className="credential-card__preview" style={{ height: 335, padding: 8, background: '#f7f6ef' }}>
+                      <Image src={item.image} alt={item.imageAlt ?? `${item.title} image`} fill sizes="(max-width: 700px) 100vw, 33vw" style={{ objectFit: 'contain' }} />
+                    </div>
                   ) : <span className="credential-card__icon" aria-hidden="true"><Award /></span>}
-                  <p className="credential-card__type">{item.type}</p>
-                  <h3>{item.title}</h3>
-                  <p className="credential-card__description">{item.description}</p>
-                  <p className="credential-card__issuer">{item.issuer} <span>·</span> {item.date}</p>
-                  <span className="text-link">View details <ArrowUpRight aria-hidden="true" /></span>
-                </Link>
+                  <div style={{ padding: '18px 20px 20px' }}>
+                    <p className="credential-card__type">{item.type}</p>
+                    <h3>{item.title}</h3>
+                    <p className="credential-card__issuer">{item.issuer} <span>·</span> {item.date}</p>
+                    <span className="text-link">View certificate <ArrowUpRight aria-hidden="true" /></span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
