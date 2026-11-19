@@ -25,6 +25,8 @@ export type PortfolioDetailPageProps = {
   }
   events?: CompetencyEntry[]
   reflectionReport?: string
+  previousCompetency?: { title: string; href: string }
+  nextCompetency?: { title: string; href: string }
 }
 
 const detailIcons = {
@@ -87,6 +89,20 @@ export default function PortfolioDetailPage({ detail }: { detail: PortfolioDetai
                   })}
                 </div>
               ) : <p className="detail-page__empty">No reflection report recorded yet.</p>}
+              <nav className="competency-step-nav" aria-label="Competency navigation">
+                {detail.previousCompetency ? (
+                  <Link href={detail.previousCompetency.href} className="competency-step-nav__link competency-step-nav__link--previous">
+                    <ArrowRight aria-hidden="true" />
+                    <span><small>PREVIOUS COMPETENCY</small>{detail.previousCompetency.title}</span>
+                  </Link>
+                ) : <span />}
+                {detail.nextCompetency ? (
+                  <Link href={detail.nextCompetency.href} className="competency-step-nav__link competency-step-nav__link--next">
+                    <span><small>NEXT COMPETENCY</small>{detail.nextCompetency.title}</span>
+                    <ArrowRight aria-hidden="true" />
+                  </Link>
+                ) : null}
+              </nav>
             </section>
           </>
         ) : detail.resource ? (
