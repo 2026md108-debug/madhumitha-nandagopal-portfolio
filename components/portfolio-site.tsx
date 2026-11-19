@@ -116,6 +116,7 @@ function PortfolioSite() {
               <p className="hero-cover__statement">An evolving record of learning, research, and a growing interest in thoughtful, evidence-led care.</p>
               <div className="hero-cover__actions">
                 <a className="button button--primary" href="#home-profile">Enter portfolio <ArrowDown aria-hidden="true" /></a>
+                <a className="button button--secondary" href="#competencies">View competencies <ArrowUpRight aria-hidden="true" /></a>
                 <a className="button button--text" href="#contact">Contact me <ArrowUpRight aria-hidden="true" /></a>
               </div>
             </div>
