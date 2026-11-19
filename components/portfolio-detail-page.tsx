@@ -74,7 +74,19 @@ export default function PortfolioDetailPage({ detail }: { detail: PortfolioDetai
             <section className="detail-page__section detail-page__reflection" aria-labelledby="reflection-title">
               <p className="eyebrow">CLOSING REFLECTION</p>
               <h2 id="reflection-title">Reflection report</h2>
-              {detail.reflectionReport ? <p style={{ whiteSpace: 'pre-line' }}>{detail.reflectionReport}</p> : <p className="detail-page__empty">No reflection report recorded yet.</p>}
+              {detail.reflectionReport ? (
+                <div className="detail-page__reflection-sections">
+                  {detail.reflectionReport.split(/(?=^\\d+\\.\\s)/m).filter(Boolean).map((section) => {
+                    const [heading, ...paragraph] = section.trim().split('\\n')
+                    return (
+                      <div className="detail-page__reflection-section" key={heading}>
+                        <h3>{heading}</h3>
+                        <p>{paragraph.join('\\n').trim()}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+              ) : <p className="detail-page__empty">No reflection report recorded yet.</p>}
             </section>
           </>
         ) : detail.resource ? (
