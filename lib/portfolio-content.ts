@@ -45,12 +45,6 @@ const competencyEvents: Record<string, CompetencyEntry[]> = {
       date: '15 October 2026 · Library Foyer, Gulf Medical University',
       summary: 'A peer-organised plank competition designed to engage students while demonstrating the abdominal muscles involved in the exercise. My contributions included planning, preparing the display boards, and managing the competition leaderboard.',
       imageLayout: 'stacked',
-      images: [
-        { src: '/images/world-anatomy-day-team.jpg', alt: 'The student team at the World Anatomy Day event at Gulf Medical University' },
-        { src: '/images/world-anatomy-day-leaderboard.jpg', alt: 'Madhumitha managing the plank competition leaderboard' },
-        { src: '/images/world-anatomy-day-event.jpg', alt: 'The World Anatomy Day plank competition taking place at the event' },
-        { src: '/images/world-anatomy-day-certificate.jpg', alt: 'Certificate of Appreciation awarded to Madhumitha for organising World Anatomy Day' },
-      ],
     },
   ],
   'evidence-based-practitioner': [
