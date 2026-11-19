@@ -55,10 +55,10 @@ export default function CompetencyEventCarousel({ events }: { events: Competency
           ) : null}
         </div>
         <div className={`competency-event__gallery competency-event__gallery--${imageLayout}`} role="group" aria-label={`${activeEvent.title} images`}>
-          {images.map((image) => (
-            <figure className="competency-event__image-frame" key={image.src}>
+          {images.map((image, index) => (
+            <figure className="competency-event__image-frame" data-gallery-index={index} key={image.src}>
               <div className="competency-event__image-inner">
-                <Image src={image.src} alt={image.alt} fill sizes="(max-width: 700px) 90vw, 42vw" />
+                <Image src={image.src} alt={image.alt} fill quality={95} sizes="(max-width: 700px) 90vw, (max-width: 1200px) 42vw, 620px" />
               </div>
             </figure>
           ))}
