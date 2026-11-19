@@ -239,8 +239,7 @@ function PortfolioSite() {
                   <p className="activity-card__type">{activity.type}</p>
                   <h3>{activity.title}</h3>
                   <p className="activity-card__description">{activity.description}</p>
-                  <span className="activity-card__date">{activity.date}</span>
-                  {activity.certificateUrl ? <a className="text-link activity-card__certificate" href={activity.certificateUrl} target="_blank" rel="noreferrer">View participation certificate <ArrowUpRight aria-hidden="true" /></a> : null}
+                  <span className="activity-card__status">{activity.status}</span>
                 </article>
               ))}
             </div>
