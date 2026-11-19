@@ -44,7 +44,7 @@ const competencyEvents: Record<string, CompetencyEntry[]> = {
       title: 'World Anatomy Day · Plank Competition',
       date: '15 October 2026 · Library Foyer, Gulf Medical University',
       summary: 'A peer-organised plank competition designed to engage students while demonstrating the abdominal muscles involved in the exercise. My contributions included planning, preparing the display boards, and managing the competition leaderboard.',
-      imageLayout: 'stacked',
+      imageLayout: 'editorial',
       images: [
         { src: '/images/world-anatomy-day-team.jpg', alt: 'The student team holding the World Anatomy Day banner at Gulf Medical University' },
         { src: '/images/world-anatomy-day-leaderboard.jpg', alt: 'Madhumitha writing and managing the plank competition leaderboard' },
