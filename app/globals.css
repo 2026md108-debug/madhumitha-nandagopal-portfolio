@@ -284,6 +284,13 @@ svg { flex: 0 0 auto; }
 .competency-event__gallery { display: grid; min-width: 0; align-items: start; gap: 12px; }
 .competency-event__gallery--side-by-side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .competency-event__gallery--stacked { grid-template-columns: minmax(0, 1fr); }
+.competency-event__gallery--editorial { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.competency-event__gallery--editorial .competency-event__image-frame { height: auto; min-height: 0; aspect-ratio: 4 / 5; }
+.competency-event__gallery--editorial .competency-event__image-frame[data-gallery-index="0"],
+.competency-event__gallery--editorial .competency-event__image-frame[data-gallery-index="3"] { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.competency-event__gallery--editorial .competency-event__image-frame[data-gallery-index="3"] { aspect-ratio: 16 / 10; }
+.competency-event__gallery--editorial .competency-event__image-inner img { object-fit: contain; }
+
 .competency-event__image-frame { display: flex; height: clamp(280px, 34vw, 430px); margin: 0; padding: 5px; overflow: hidden; border: 1px solid var(--line); border-radius: 5px; background: var(--paper-bright); box-shadow: 0 10px 28px rgb(47 57 38 / 7%); }
 .competency-event__image-inner { position: relative; min-width: 0; min-height: 0; flex: 1; overflow: hidden; background: var(--sage-pale); }
 .competency-event__image-inner img { object-fit: contain; }
@@ -326,6 +333,13 @@ svg { flex: 0 0 auto; }
   .detail-page__participation { margin-top: 40px; padding: 16px; }
   .competency-event { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .competency-event__gallery--side-by-side { grid-template-columns: minmax(0, 1fr); }
+  .competency-event__gallery--editorial { grid-template-columns: minmax(0, 1fr); }
+  .competency-event__gallery--editorial .competency-event__image-frame,
+  .competency-event__gallery--editorial .competency-event__image-frame[data-gallery-index="0"],
+  .competency-event__gallery--editorial .competency-event__image-frame[data-gallery-index="3"] { grid-column: auto; aspect-ratio: 4 / 5; }
+  .competency-event__gallery--editorial .competency-event__image-frame[data-gallery-index="0"] { aspect-ratio: 4 / 3; }
+  .competency-event__gallery--editorial .competency-event__image-frame[data-gallery-index="3"] { aspect-ratio: 16 / 11; }
+
   .competency-event__image-frame { height: clamp(250px, 78vw, 390px); }
   .competency-event__description-space { min-height: 88px; }
   .detail-page__metadata { gap: 14px; }
