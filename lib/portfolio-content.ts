@@ -1,31 +1,101 @@
 export const navigation = [
   { id: 'about', label: 'About' },
-  { id: 'education', label: 'Education' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'competencies', label: 'Competencies' },
+  { id: 'projects', label: 'Research' },
   { id: 'achievements', label: 'Achievements' },
-  { id: 'skills', label: 'Skills & interests' },
   { id: 'activities', label: 'Activities' },
   { id: 'contact', label: 'Contact' },
 ]
 
-export const education = [
-  {
-    id: 'medical-school',
-    date: '[Start Year] — Present',
-    institution: '[Medical University Name]',
-    qualification: '[Medical degree / programme]',
-    note: 'Current medical studies · [City, Country]',
-    highlights: ['Medical education', 'In progress'],
-  },
-  {
-    id: 'previous-education',
-    date: '[Start Year] — [End Year]',
-    institution: '[Previous School Name]',
-    qualification: '[School qualification or programme]',
-    note: 'Previous education · [City, Country]',
-    highlights: ['Add qualification', 'Add achievement'],
-  },
+export type CompetencyImage = {
+  src: string
+  alt: string
+}
+
+export type CompetencyEntry = {
+  id: string
+  title: string
+  date?: string
+  summary?: string
+  image?: string
+  imageAlt?: string
+  images?: CompetencyImage[]
+  imageLayout?: 'stacked' | 'side-by-side'
+  href?: string
+  documentUrl?: string
+}
+
+const competencyDomainDetails = [
+  { id: 'medical-expert', code: 'ME', name: 'Medical Expert', description: 'Medical knowledge, clinical reasoning, and applying science to health questions.' },
+  { id: 'evidence-based-practitioner', code: 'EBP', name: 'Evidence-based Practitioner & Scholar', description: 'Research, critical appraisal, and scholarly learning.' },
+  { id: 'patient-care-provider', code: 'PCP', name: 'Patient Care Provider & Health Advocate', description: 'Patient-centered care, health promotion, and advocacy.' },
+  { id: 'communicator', code: 'COM', name: 'Communicator', description: 'Clear, compassionate communication with patients and colleagues.' },
+  { id: 'collaborator-innovator-leader', code: 'CIL', name: 'Collaborator, Innovator & Leader', description: 'Teamwork, leadership, and thoughtful improvement.' },
+  { id: 'professional', code: 'PRO', name: 'Professional', description: 'Ethics, accountability, and professional conduct.' },
+  { id: 'health-system-proponent', code: 'HSP', name: 'Health System Proponent', description: 'Systems awareness, safety, and improving how care is delivered.' },
+  { id: 'self-profession-enhancer', code: 'SPE', name: 'Self and Profession Enhancer', description: 'Reflection, resilience, and continuing professional development.' },
+  { id: 'socially-accountable', code: 'SA', name: 'Socially Accountable', description: 'Community engagement, equity, and responsibility to society.' },
 ]
+
+const competencyEvents: Record<string, CompetencyEntry[]> = {
+  'evidence-based-practitioner': [
+    {
+      id: 'mena-metabolism-congress',
+      title: '3rd MENA Congress for Metabolism in Health and Disease',
+      date: '02–03 October 2026 · Dubai, United Arab Emirates',
+      imageLayout: 'stacked',
+      images: [
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/21E95D39-63AA-4131-B361-51FF476ABCEF-c016zfWWl9GsSCG44YBSuVwpiDULoF.jpg', alt: 'Madhumitha at the 3rd MENA Congress for Metabolism in Health and Disease' },
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0429-u6vjwRS5i7U92bmEPMMQD3dynXY6bV.jpg', alt: 'Certificate of attendance for the 3rd MENA Congress for Metabolism in Health and Disease' },
+      ],
+    },
+    {
+      id: 'hayat-program',
+      title: 'Hayat Program',
+      date: '30 September 2026 · Ajman, United Arab Emirates',
+      imageLayout: 'stacked',
+      images: [
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1264-WgViI4T3sPeEHwi4nTGOiUJq2YuJGQ.jpg', alt: 'Gulf Medical University certificate of participation in the Hayat Program' },
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1263-hAEH1fvhN4VRfsnjnDRBZzwmEowwUC.jpg', alt: 'Ministry of Health and Prevention certificate of appreciation for the Hayat Program' },
+      ],
+    },
+  ],
+  'medical-expert': [
+    {
+      id: 'patient-assessment-practice',
+      title: 'Clinical practice session',
+      imageLayout: 'side-by-side',
+      images: [
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7F49BDE8-D87D-48AF-B276-309A70010FFD.JPG-iKfkClrxF1eYKx6OJ40RemVqbVoywi.jpeg', alt: 'Clinical skills practice with a patient and supervising clinician' },
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0167-EECUzArJY9UMtlxLmjw7BQnPgooOc1.jpeg', alt: 'Madhumitha practicing a clinical procedure with a peer' },
+      ],
+    },
+    {
+      id: 'clinical-procedure-practice',
+      title: 'Clinical procedure practice',
+      imageLayout: 'stacked',
+      images: [
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/E52A024E-5F28-4471-B38B-DDFE84C03620.JPG-z56mPSSIviAPW4uGRkdd8K3vJhtx5x.jpeg', alt: 'Clinical procedure practice with a supervising clinician' },
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/B7430A71-DBF6-489A-A037-2685C1BE2FC6.JPG-boVRODIq6x0wEXrlrTVhiyti1NUo4x.jpeg', alt: 'Close view of a clinical procedure practice session' },
+      ],
+    },
+    {
+      id: 'laboratory-sample-practice',
+      title: 'Laboratory sample practice',
+      imageLayout: 'side-by-side',
+      images: [
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0178-txYBFfHb2bmtmemYn43gX0dmTW67f2.jpeg', alt: 'Madhumitha reviewing a laboratory sample during a practical session' },
+        { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9946-FaQUTb53FuIpuClMRYwKyjpC2XYiOW.jpeg', alt: 'Close view of sample drops arranged on glass slides' },
+      ],
+    },
+  ],
+}
+
+export const competencyDomains = competencyDomainDetails.map((domain) => ({
+  ...domain,
+  events: competencyEvents[domain.id] ?? [],
+  reflectionReport: '',
+}))
 
 export type PortfolioProject = {
   id: string
@@ -43,6 +113,7 @@ export type PortfolioCredential = {
   id: string
   type: string
   title: string
+  description: string
   issuer: string
   date: string
   image?: string
@@ -55,94 +126,41 @@ export type PortfolioActivity = {
   type: string
   title: string
   description: string
-  status: string
-}
-
-export type PortfolioReflectionStage = {
-  title: string
-  content: string
-}
-
-export const competencyExperience = {
-  title: 'World Anatomy Day – Plank Competition',
-  date: '15 October 2026',
-  institution: 'Gulf Medical University',
-  domain: 'Collaborator, Innovator & Leader',
-  tagline: 'Teamwork, leadership, and thoughtful improvement.',
-  description:
-    'As part of a team, I helped organise a plank competition for World Anatomy Day. The activity connected anatomy with movement by introducing participants to the abdominal muscles involved in a plank. My contributions included taking part in the planning process, preparing the display boards, and managing the leaderboard.',
-  reflection: [
-    {
-      title: 'Description',
-      content:
-        'On 15 October 2026, I took part in the World Anatomy Day event at GMU. It was my first experience organising a stall independently with my peers. Our team organised a plank competition to demonstrate the abdominal muscles involved in the exercise. I contributed to the planning process, prepared the display boards, and volunteered to manage the leaderboard.',
-    },
-    {
-      title: 'Feelings',
-      content:
-        'I felt excited to be part of an event that allowed us to share our anatomical knowledge with other students. Taking responsibility for the leaderboard gave me a sense of ownership, and I wanted to make sure the activity remained organised. Seeing students engage with the competition made the experience enjoyable and rewarding.',
-    },
-    {
-      title: 'Evaluation',
-      content:
-        'The event was a valuable experience because it made learning anatomy more interactive. Explaining the muscles involved in a plank helped connect what we learn in class with a familiar physical activity. Preparing the display boards and managing the leaderboard also gave me a clear way to contribute to the team.',
-    },
-    {
-      title: 'Analysis',
-      content:
-        'This experience helped me understand how teamwork, communication, and planning contribute to organising an event. Working alongside my peers meant that each person had to take responsibility for their part while remaining aware of the team’s overall goal. It also showed me that leadership can be demonstrated through initiative and reliable contributions, even without a formal title.',
-    },
-    {
-      title: 'Conclusion',
-      content:
-        'Looking back, I realised that organising an event involves more than completing individual tasks. It requires cooperation, initiative, and responsibility towards a shared goal. I also learned that medical knowledge can be communicated in simple and engaging ways beyond the classroom.',
-    },
-    {
-      title: 'Action Plan',
-      content:
-        'In future events, I would like to contribute more confidently to planning and coordination, communicate actively with participants, and take on new responsibilities. I would also prepare clear explanations and visual materials in advance so that medical concepts are easier for others to understand.',
-    },
-  ] satisfies PortfolioReflectionStage[],
+  date: string
+  certificateUrl?: string
 }
 
 export const projects: PortfolioProject[] = [
   {
     id: 'coursework',
     category: 'Coursework',
-    date: '[Month Year]',
-    title: '[Project title]',
-    description: 'Add a short overview of the assignment, the question it explored, and what you learned.',
-    subject: '[Subject or course]',
+    date: 'Month Year',
+    title: 'Project title',
+    description: 'Coursework and assignments exploring topics from medical study.',
+    subject: 'Subject or course',
   },
   {
     id: 'research',
     category: 'Research & inquiry',
-    date: '[Month Year]',
-    title: '[Research project title]',
-    description: 'Summarize your topic, contribution, and any findings or skills you would like to highlight.',
-    subject: '[Research area]',
+    date: 'Month Year',
+    title: 'Research project title',
+    description: 'Research questions, methods, and evidence related to medical science.',
+    subject: 'Research area',
   },
   {
     id: 'presentation',
     category: 'Presentation',
-    date: '[Month Year]',
-    title: '[Presentation title]',
-    description: 'Describe a medical presentation, seminar, or academic project and the audience it served.',
-    subject: '[Subject or event]',
+    date: 'Month Year',
+    title: 'Presentation title',
+    description: 'Medical topics presented to an academic or student audience.',
+    subject: 'Subject or event',
   },
 ]
 
 export const credentials: PortfolioCredential[] = [
-  { id: 'certificate', type: 'CERTIFICATION', title: '[Certificate title]', issuer: '[Issuing organization]', date: '[Year]' },
-  { id: 'workshop', type: 'WORKSHOP / SEMINAR', title: '[Workshop or seminar]', issuer: '[Organizing institution]', date: '[Year]' },
-  { id: 'achievement', type: 'ACADEMIC ACHIEVEMENT', title: '[Award or accomplishment]', issuer: '[Institution or organization]', date: '[Year]' },
-]
-
-export const skillGroups = [
-  { name: 'Academic', note: 'KNOWLEDGE & STUDY', items: ['Evidence appraisal', 'Scientific writing', 'Literature review'] },
-  { name: 'Technical', note: 'TOOLS & METHODS', items: ['Research methods', 'Data literacy', 'Presentation design'] },
-  { name: 'Communication', note: 'WORKING WITH OTHERS', items: ['Active listening', 'Clear communication', 'Collaboration'] },
-  { name: 'Areas of interest', note: 'SUBJECTS TO EXPLORE', items: ['Clinical medicine', 'Public health', 'Medical research'] },
+  { id: 'certificate', type: 'CERTIFICATION', title: 'Certificate title', description: 'Professional training and certification records.', issuer: 'Issuing organization', date: 'Year' },
+  { id: 'workshop', type: 'WORKSHOP / SEMINAR', title: 'Workshop or seminar', description: 'Seminars and workshops connected to medical learning.', issuer: 'Organizing institution', date: 'Year' },
+  { id: 'achievement', type: 'ACADEMIC ACHIEVEMENT', title: 'Award or accomplishment', description: 'Recognition of academic progress and accomplishments.', issuer: 'Institution or organization', date: 'Year' },
 ]
 
 export const activities: PortfolioActivity[] = [
@@ -151,20 +169,20 @@ export const activities: PortfolioActivity[] = [
     type: 'VOLUNTEERING',
     title: 'Volunteer experience',
     description: 'Community service, outreach, and volunteer participation.',
-    status: 'COMING SOON',
+    date: 'Year or dates',
   },
   {
     id: 'student-life',
     type: 'STUDENT LIFE',
     title: 'Student activity or event',
     description: 'Student societies, campus events, and peer activities.',
-    status: 'COMING SOON',
+    date: 'Year or dates',
   },
   {
     id: 'leadership',
     type: 'LEADERSHIP',
     title: 'Leadership experience',
     description: 'Leadership roles, shared responsibilities, and team contributions.',
-    status: 'COMING SOON',
+    date: 'Year or dates',
   },
 ]

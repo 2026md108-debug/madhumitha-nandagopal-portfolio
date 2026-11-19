@@ -3,11 +3,11 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: '[Your Name] — Medical Student Portfolio',
-  description: 'A personal academic portfolio documenting [Your Name]’s journey through medical education, research, and a growing interest in thoughtful, human-centered care.',
+  title: 'Madhumitha Nandagopal — Medical Student Portfolio',
+  description: 'Personal academic portfolio of Madhumitha Nandagopal, a Year 1 Doctor of Medicine (MD Program) student at Gulf Medical University, documenting learning, research, and a growing interest in thoughtful, human-centered care.',
   generator: 'Next.js',
   openGraph: {
-    title: '[Your Name] — Medical Student Portfolio',
+    title: 'Madhumitha Nandagopal — Medical Student Portfolio',
     description: 'An evolving portfolio of medical education, academic projects, research, and interests.',
     type: 'website',
   },
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: 'light dark',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: '(prefers-color-scheme: light)', color: '#f1f1e9' },
+    { media: '(prefers-color-scheme: dark)', color: '#f1f1e9' },
   ],
 }
 

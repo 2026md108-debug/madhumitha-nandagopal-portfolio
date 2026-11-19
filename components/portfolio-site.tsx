@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   ArrowDown,
   ArrowRight,
@@ -6,18 +7,18 @@ import {
   Award,
   BookOpen,
   ClipboardList,
-  GraduationCap,
   HeartHandshake,
+  HeartPulse,
   Mail,
   Microscope,
+  Stethoscope,
 } from 'lucide-react'
 import {
   activities,
+  competencyDomains,
   credentials,
-  education,
   navigation,
   projects,
-  skillGroups,
 } from '@/lib/portfolio-content'
 
 type SectionHeadingProps = {
@@ -43,18 +44,30 @@ function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__top">
-        <a className="wordmark" href="#home" aria-label="Your Name — home">
-          <span className="wordmark__mark" aria-hidden="true">YN</span>
-          <span className="wordmark__text">[Your Name]<small>MEDICAL STUDENT</small></span>
+        <a className="wordmark" href="#home" aria-label="Madhumitha Nandagopal — home">
+          <span className="wordmark__text">Madhumitha Nandagopal<small>MD PROGRAM · YEAR 1</small></span>
         </a>
-        <a className="header-contact" href="#contact">Let&apos;s connect <ArrowUpRight aria-hidden="true" /></a>
+        <nav className="site-nav" aria-label="Main navigation">
+          {navigation.map((item) => (
+            <a href={`#${item.id}`} key={item.id}>{item.label}</a>
+          ))}
+        </nav>
+        <a className="header-contact" href="#contact">Get in touch <ArrowUpRight aria-hidden="true" /></a>
       </div>
-      <nav className="site-nav" aria-label="Main navigation">
-        {navigation.map((item) => (
-          <a href={`#${item.id}`} key={item.id}>{item.label}</a>
-        ))}
-      </nav>
     </header>
+  )
+}
+
+function CompetencyDomainCard({ domain }: { domain: (typeof competencyDomains)[number] }) {
+  return (
+    <Link className="competency-domain" href={`/competencies/${domain.id}`} aria-label={`Open ${domain.name} competency`}>
+      <div className="competency-domain__summary">
+        <div className="competency-domain__meta"><span>{domain.code}</span><span>COMPETENCY</span></div>
+        <h3>{domain.name}</h3>
+        <p>{domain.description}</p>
+        <span className="competency-domain__action">Open domain <ArrowUpRight aria-hidden="true" /></span>
+      </div>
+    </Link>
   )
 }
 
@@ -62,7 +75,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
   const ProjectIcon = index === 0 ? BookOpen : index === 1 ? Microscope : ClipboardList
 
   return (
-    <article className="project-card">
+    <Link className="project-card" href={`/research/${project.id}`} aria-label={`Open ${project.title}`}>
       <div className={`project-art project-art--${index + 1}`}>
         {project.image ? (
           <Image src={project.image} alt={project.imageAlt ?? ''} fill sizes="(max-width: 720px) 100vw, 33vw" />
@@ -81,14 +94,10 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
         <p>{project.description}</p>
         <div className="project-card__footer">
           <span>{project.subject}</span>
-          {project.href ? (
-            <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title}`}>
-              <ArrowUpRight aria-hidden="true" />
-            </a>
-          ) : <span className="project-card__arrow" aria-hidden="true"><ArrowRight /></span>}
+          <span className="project-card__arrow" aria-hidden="true"><ArrowRight /></span>
         </div>
       </div>
-    </article>
+    </Link>
   )
 }
 
@@ -98,34 +107,65 @@ function PortfolioSite() {
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader />
       <main id="main">
-        <section className="hero page-width" id="home" aria-labelledby="hero-title">
-          <div className="hero__copy">
-            <p className="eyebrow hero__eyebrow"><span className="status-dot" />A PERSONAL ACADEMIC PORTFOLIO</p>
-            <p className="hero__name">[Your Name]</p>
-            <h1 id="hero-title">Learning the art and science of <em>care.</em></h1>
-            <p className="hero__intro">Medical student with a growing interest in medicine, healthcare, research, and the lifelong practice of asking better questions.</p>
-            <div className="hero__actions">
-              <a className="button button--primary" href="#projects">Explore my portfolio <ArrowRight aria-hidden="true" /></a>
-              <a className="button button--text" href="#contact">Contact me <ArrowUpRight aria-hidden="true" /></a>
+        <section className="home-section" id="home" aria-labelledby="hero-title">
+          <div className="hero-cover page-width">
+            <div className="hero-cover__content">
+              <p className="eyebrow hero-cover__eyebrow"><span className="status-dot" />PERSONAL ACADEMIC PORTFOLIO</p>
+              <h1 className="hero__name" id="hero-title">Madhumitha<br />Nandagopal</h1>
+              <p className="hero-cover__role"><span>DOCTOR OF MEDICINE (MD PROGRAM)</span><span aria-hidden="true">·</span><span>YEAR 1</span><span aria-hidden="true">·</span><span>GULF MEDICAL UNIVERSITY</span></p>
+              <p className="hero-cover__statement">An evolving record of learning, research, and a growing interest in thoughtful, evidence-led care.</p>
+              <div className="hero-cover__actions">
+                <a className="button button--primary" href="#home-profile">Enter portfolio <ArrowDown aria-hidden="true" /></a>
+                <a className="button button--text" href="#contact">Contact me <ArrowUpRight aria-hidden="true" /></a>
+              </div>
             </div>
-            <div className="hero__footnote"><span className="hero__footnote-line" />Currently studying at <strong>[University Name]</strong></div>
-          </div>
-          <div className="hero__visual">
-            <div className="portrait-frame">
-              <Image
-                src="/images/portfolio-portrait.png"
-                alt="Replace with a professional portrait of [Your Name]"
-                fill
-                priority
-                sizes="(max-width: 800px) 80vw, 42vw"
-                className="portrait-frame__image"
-              />
-              <div className="portrait-frame__label"><span>01 / PROFILE</span><span>PHOTO PLACEHOLDER</span></div>
+            <span className="medical-mark" aria-hidden="true"><Stethoscope /><HeartPulse className="medical-mark__heart" /></span>
+            <div className="hero-cover__footer">
+              <span>MEDICINE · RESEARCH · LEARNING</span>
+              <a href="#home-profile">CONTINUE <ArrowDown aria-hidden="true" /></a>
+              <span>01 / 02</span>
             </div>
-            <span className="hero__side-note">SCIENCE · SERVICE · CURIOSITY</span>
-            <div className="hero__seal" aria-hidden="true"><span>THE PRACTICE OF</span><span>ALWAYS</span><span>LEARNING</span><ArrowDown /></div>
           </div>
-          <a className="scroll-cue" href="#about"><span>SCROLL TO EXPLORE</span><ArrowDown aria-hidden="true" /></a>
+          <div className="hero-profile page-width" id="home-profile" role="group" aria-labelledby="hero-profile-title">
+            <div className="hero-profile__copy">
+              <p className="eyebrow">ABOUT THE STUDENT</p>
+              <h2 id="hero-profile-title">Curiosity, perspective, and care.</h2>
+              <p className="hero-profile__intro">A Year 1 Doctor of Medicine (MD Program) student at Gulf Medical University, with growing interests in medicine, healthcare, research, and continuous learning.</p>
+              <div className="medical-pulse" aria-hidden="true">
+                <svg viewBox="0 0 94 24" fill="none"><path d="M1 12H28L35 12L41 5L47 19L54 8L60 12H93" /></svg>
+              </div>
+              <h3 className="hero-profile__subhead">Areas of interest</h3>
+              <ul className="hero-profile__interests">
+                <li>Medicine &amp; healthcare</li>
+                <li>Research &amp; evidence</li>
+                <li>Patient-centered care</li>
+                <li>Continuous learning</li>
+              </ul>
+              <dl className="hero-profile__details">
+                <div><dt>PROGRAMME</dt><dd>Doctor of Medicine (MD Program)</dd></div>
+                <div><dt>YEAR</dt><dd>Year 1</dd></div>
+                <div><dt>UNIVERSITY</dt><dd>Gulf Medical University</dd></div>
+              </dl>
+              <a className="hero-profile__about-link" href="#about">Continue to about <ArrowRight aria-hidden="true" /></a>
+            </div>
+            <div className="hero-profile__visual">
+              <figure className="portrait-frame">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-11-17%20at%2012.19.40%20AM-HSGgvwJOmOdQByf9b1gFmM4p5mWsNY.jpeg"
+                  alt="Madhumitha Nandagopal in a white coat at Gulf Medical University"
+                  fill
+                  priority
+                  sizes="(max-width: 800px) 85vw, 42vw"
+                  className="portrait-frame__image"
+                />
+                <figcaption className="portrait-frame__label"><span>MEDICAL STUDENT</span><span>AJMAN, UNITED ARAB EMIRATES</span></figcaption>
+              </figure>
+            </div>
+            <div className="hero-profile__footer">
+              <span>02 / 02</span>
+              <a href="#about">CONTINUE TO PORTFOLIO <ArrowDown aria-hidden="true" /></a>
+            </div>
+          </div>
         </section>
 
         <section className="about-section section-pad" id="about" aria-labelledby="01-title">
@@ -133,9 +173,8 @@ function PortfolioSite() {
             <SectionHeading number="01" eyebrow="A LITTLE ABOUT ME" title="A human perspective. A curious mind." description="Medicine brings together the questions I love asking and the people I hope to serve. This is the beginning of that story." />
             <div className="about-grid">
               <div className="about-lead">
-                <span className="decorative-quote" aria-hidden="true">“</span>
                 <p>My interest in medicine grows from the meeting point of science and human experience. I&apos;m drawn to a field where careful listening, evidence, and compassion all matter.</p>
-                <span className="about-lead__caption">A perspective in progress</span>
+                <span className="about-lead__caption"><HeartPulse aria-hidden="true" /> A perspective in progress</span>
               </div>
               <div className="about-details">
                 <article>
@@ -155,25 +194,11 @@ function PortfolioSite() {
           </div>
         </section>
 
-        <section className="education-section section-pad" id="education" aria-labelledby="02-title">
+        <section className="competencies-section section-pad" id="competencies" aria-labelledby="02-title">
           <div className="page-width">
-            <SectionHeading number="02" eyebrow="EDUCATION" title="The foundations so far." description="An evolving record of the places, people, and ideas that have shaped my academic journey." />
-            <div className="education-layout">
-              <p className="section-aside">My academic journey<br /><span>Curiosity is a good place to begin.</span></p>
-              <ol className="timeline">
-                {education.map((item) => (
-                  <li className="timeline__item" key={item.id}>
-                    <span className="timeline__marker" aria-hidden="true"><GraduationCap /></span>
-                    <div className="timeline__content">
-                      <p className="timeline__date">{item.date}</p>
-                      <h3>{item.institution}</h3>
-                      <p className="timeline__qualification">{item.qualification}</p>
-                      <p className="timeline__note">{item.note}</p>
-                      <div className="timeline__tags">{item.highlights.map((highlight) => <span key={highlight}>{highlight}</span>)}</div>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+            <SectionHeading number="02" eyebrow="COMPETENCIES" title="Nine domains. One evolving portfolio." description="Open a domain to view its participation record and closing reflection." />
+            <div className="competencies-grid">
+              {competencyDomains.map((domain) => <CompetencyDomainCard key={domain.id} domain={domain} />)}
             </div>
           </div>
         </section>
@@ -184,7 +209,6 @@ function PortfolioSite() {
             <div className="projects-grid">
               {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
             </div>
-            <p className="editor-note"><span aria-hidden="true">✳</span> Project details are placeholders—replace them with your own work and links.</p>
           </div>
         </section>
 
@@ -193,54 +217,36 @@ function PortfolioSite() {
             <SectionHeading number="04" eyebrow="CERTIFICATIONS & ACHIEVEMENTS" title="Milestones, large and small." description="A place to gather certificates, awards, workshops, seminars, and moments of academic growth." />
             <div className="credentials-grid">
               {credentials.map((item, index) => (
-                <article className="credential-card" key={item.id}>
+                <Link className="credential-card" href={`/achievements/${item.id}`} key={item.id} aria-label={`Open ${item.title}`}>
                   <span className="credential-card__number">0{index + 1}</span>
                   {item.image ? (
                     <div className="credential-card__preview"><Image src={item.image} alt={item.imageAlt ?? `${item.title} image`} fill sizes="(max-width: 700px) 100vw, 33vw" /></div>
                   ) : <span className="credential-card__icon" aria-hidden="true"><Award /></span>}
                   <p className="credential-card__type">{item.type}</p>
                   <h3>{item.title}</h3>
+                  <p className="credential-card__description">{item.description}</p>
                   <p className="credential-card__issuer">{item.issuer} <span>·</span> {item.date}</p>
-                  {item.documentUrl ? (
-                    <a className="text-link" href={item.documentUrl} target="_blank" rel="noreferrer">View certificate <ArrowUpRight aria-hidden="true" /></a>
-                  ) : <span className="credential-card__hint">Add a certificate, image, or document</span>}
-                </article>
+                  <span className="text-link">View details <ArrowUpRight aria-hidden="true" /></span>
+                </Link>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="skills-section section-pad" id="skills" aria-labelledby="05-title">
+        <section className="activities-section section-pad" id="activities" aria-labelledby="05-title">
           <div className="page-width">
-            <SectionHeading number="05" eyebrow="SKILLS & INTERESTS" title="A toolkit in the making." description="A thoughtful mix of knowledge, practice, and the curiosity to keep growing." />
-            <div className="skills-layout">
-              <div className="skills-intro"><span className="skills-mark" aria-hidden="true">+</span><p>Everyone&apos;s path is different. Keep the skills and interests that reflect your own experience, and make this section yours.</p></div>
-              <div className="skill-groups">
-                {skillGroups.map((group) => (
-                  <div className="skill-group" key={group.name}>
-                    <div className="skill-group__heading"><h3>{group.name}</h3><span>{group.note}</span></div>
-                    <div className="skill-tags">{group.items.map((item) => <span key={item}>{item}</span>)}</div>
-                  </div>
-                ))}
-                <p className="skills-disclaimer">Suggested starting points—not a measure of proficiency.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="activities-section section-pad" id="activities" aria-labelledby="06-title">
-          <div className="page-width">
-            <SectionHeading number="06" eyebrow="BEYOND THE CLASSROOM" title="Learning happens everywhere." description="Experiences that build community, perspective, and a sense of responsibility beyond the lecture hall." />
+            <SectionHeading number="05" eyebrow="BEYOND THE CLASSROOM" title="Learning happens everywhere." description="Experiences that build community, perspective, and a sense of responsibility beyond the lecture hall." />
             <div className="activities-grid">
               {activities.map((activity, index) => (
-                <article className="activity-card" key={activity.id}>
+                <Link className="activity-card" href={`/activities/${activity.id}`} key={activity.id} aria-label={`Open ${activity.title}`}>
                   <span className="activity-card__index">0{index + 1}</span>
                   <span className="activity-card__icon" aria-hidden="true"><HeartHandshake /></span>
                   <p className="activity-card__type">{activity.type}</p>
                   <h3>{activity.title}</h3>
                   <p className="activity-card__description">{activity.description}</p>
-                  <span className="activity-card__status">{activity.status}</span>
-                </article>
+                  <span className="activity-card__date">{activity.date}</span>
+                  <span className="text-link activity-card__certificate">View details <ArrowUpRight aria-hidden="true" /></span>
+                </Link>
               ))}
             </div>
           </div>
@@ -249,20 +255,20 @@ function PortfolioSite() {
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
           <div className="page-width contact-inner">
             <div>
-              <p className="eyebrow"><span>07</span>CONTACT</p>
+              <p className="eyebrow"><span>06</span>CONTACT</p>
               <h2 id="contact-title">Good things begin<br />with a <em>conversation.</em></h2>
               <p className="contact-intro">For academic connections, research conversations, or a simple hello, I&apos;d be glad to hear from you.</p>
             </div>
             <div className="contact-links">
-              <a href="mailto:your.email@example.com"><span className="contact-link__icon"><Mail aria-hidden="true" /></span><span><small>EMAIL</small>your.email@example.com</span><ArrowUpRight aria-hidden="true" /></a>
+              <a href="mailto:2026md108@mygmu.ac.ae"><span className="contact-link__icon"><Mail aria-hidden="true" /></span><span><small>EMAIL</small>2026md108@mygmu.ac.ae</span><ArrowUpRight aria-hidden="true" /></a>
               <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer"><span className="contact-link__icon contact-link__icon--linkedin" aria-hidden="true">in</span><span><small>LINKEDIN</small>Connect professionally</span><ArrowUpRight aria-hidden="true" /></a>
             </div>
-            <div className="contact-bottom"><span>OPEN TO MEANINGFUL CONNECTIONS</span><span>[City, Country]</span></div>
+            <div className="contact-bottom"><span>OPEN TO MEANINGFUL CONNECTIONS</span><span>Ajman, United Arab Emirates</span></div>
           </div>
         </section>
       </main>
       <footer className="site-footer page-width">
-        <a className="footer-wordmark" href="#home">[Your Name]<span>Medical student · [University Name]</span></a>
+        <a className="footer-wordmark" href="#home">Madhumitha Nandagopal<span>Doctor of Medicine (MD Program), Year 1 · Gulf Medical University</span></a>
         <p>Built with curiosity, and room to grow.</p>
         <a className="back-to-top" href="#home">Back to top <ArrowUpRight aria-hidden="true" /></a>
       </footer>
