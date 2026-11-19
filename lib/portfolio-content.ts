@@ -38,6 +38,21 @@ const competencyDomainDetails = [
 ]
 
 const competencyEvents: Record<string, CompetencyEntry[]> = {
+  'collaborator-innovator-leader': [
+    {
+      id: 'world-anatomy-day-plank-competition',
+      title: 'World Anatomy Day · Plank Competition',
+      date: '15 October 2026 · Library Foyer, Gulf Medical University',
+      summary: 'A peer-organised plank competition designed to engage students while demonstrating the abdominal muscles involved in the exercise. My contributions included planning, preparing the display boards, and managing the competition leaderboard.',
+      imageLayout: 'stacked',
+      images: [
+        { src: '/images/world-anatomy-day-team.jpg', alt: 'The student team at the World Anatomy Day event at Gulf Medical University' },
+        { src: '/images/world-anatomy-day-leaderboard.jpg', alt: 'Madhumitha managing the plank competition leaderboard' },
+        { src: '/images/world-anatomy-day-event.jpg', alt: 'The World Anatomy Day plank competition taking place at the event' },
+        { src: '/images/world-anatomy-day-certificate.jpg', alt: 'Certificate of Appreciation awarded to Madhumitha for organising World Anatomy Day' },
+      ],
+    },
+  ],
   'evidence-based-practitioner': [
     {
       id: 'mena-metabolism-congress',
@@ -94,7 +109,17 @@ const competencyEvents: Record<string, CompetencyEntry[]> = {
 export const competencyDomains = competencyDomainDetails.map((domain) => ({
   ...domain,
   events: competencyEvents[domain.id] ?? [],
-  reflectionReport: '',
+  reflectionReport: domain.id === 'collaborator-innovator-leader' ? `On 15 October 2026, I was part of a team that organised a World Anatomy Day event at the Library Foyer of Gulf Medical University. We organised a plank competition to engage students while demonstrating the abdominal muscles involved in the exercise. I participated in planning the event, preparing the display boards and managing the competition leaderboard. It was my first experience helping organise an event with my peers with limited professional assistance, which made the experience both exciting and challenging.
+
+Before the event, I felt enthusiastic about being involved and seeing our ideas come together. At the same time, I felt slightly nervous about whether everything would go according to plan. As the event began and students started showing interest in our activity, I became more confident and comfortable with my responsibilities. Seeing participants enjoy the competition and learn something about anatomy made me feel proud of what our team had organised.
+
+One of the most positive aspects was the cooperation among team members. Everyone contributed in different ways, and preparing the displays gave us an opportunity to communicate our ideas creatively. Managing the leaderboard also helped me understand the importance of staying organised and attentive during an activity. However, I realised that coordinating an event while responding to participants required more preparation and time management than I had initially expected. Some tasks could have been organised more efficiently.
+
+Looking back, I think the event was successful because we worked together, shared responsibilities and remained involved throughout the activity. My contribution to the display boards and leaderboard helped the competition run in an organised manner. I also realised that leadership does not always mean giving instructions; it can involve taking responsibility for a task, supporting others and making sure small details are not overlooked. I could have communicated the competition rules and scoring process more clearly before participants began.
+
+If I organise a similar event again, I will prepare a digital leaderboard in advance and test it before the event. I will also create a written checklist of materials and tasks, allocate time for setting up the displays, and confirm everyone's responsibilities beforehand. Before starting the competition, I will explain the rules and scoring criteria clearly to participants. I would also ask a few volunteers to help manage the participants and collect feedback afterwards. These are practical steps I can take to make future events more organised and engaging.
+
+Overall, this experience helped me recognise the value of teamwork, responsibility and communication. It showed me that even a small student-led activity can create an opportunity for learning while helping me develop skills that will be important in my future medical career.` : '',
 }))
 
 export type PortfolioProject = {
