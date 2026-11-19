@@ -320,6 +320,12 @@ svg { flex: 0 0 auto; }
 .detail-page__reflection { margin-top: 60px; padding: 28px; border: 1px solid var(--sage-soft); border-radius: 12px; background: var(--olive-pale); }
 .detail-page__reflection h2 { margin-bottom: 12px; }
 .detail-page__reflection > p:last-child { margin: 0; color: var(--muted-ink); font-size: calc(16px + var(--text-size-bump)); line-height: 1.8; }
+.detail-page__reflection-sections { display: grid; gap: 22px; }
+.detail-page__reflection-section { padding-top: 18px; border-top: 1px solid var(--sage-soft); }
+.detail-page__reflection-section:first-child { padding-top: 8px; border-top: 0; }
+.detail-page__reflection-section h3 { margin: 0 0 8px; color: var(--ink); font-family: var(--font-display); font-size: clamp(23px, 2.4vw, 30px); font-weight: 500; }
+.detail-page__reflection-section p { margin: 0; color: var(--muted-ink); font-size: calc(16px + var(--text-size-bump)); line-height: 1.8; white-space: pre-line; }
+
 .detail-page__resource { padding: 11px 15px; border: 1px solid var(--sage-soft); border-radius: 999px; background: var(--paper-bright); }
 
 @media (max-width: 1000px) {
