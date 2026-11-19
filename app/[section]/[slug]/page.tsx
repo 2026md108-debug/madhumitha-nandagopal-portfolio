@@ -83,8 +83,7 @@ function getPortfolioDetail(section: string, slug: string): PortfolioDetailPageP
       category: activity.type,
       title: activity.title,
       description: activity.description,
-      metadata: [{ label: 'Date', value: activity.date }],
-      resource: activity.certificateUrl ? { href: activity.certificateUrl, label: 'View participation certificate' } : undefined,
+      metadata: [{ label: 'Category', value: activity.type }],
     }
   }
 

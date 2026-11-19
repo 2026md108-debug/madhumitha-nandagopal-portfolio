@@ -238,15 +238,13 @@ function PortfolioSite() {
             <SectionHeading number="05" eyebrow="BEYOND THE CLASSROOM" title="Learning happens everywhere." description="Experiences that build community, perspective, and a sense of responsibility beyond the lecture hall." />
             <div className="activities-grid">
               {activities.map((activity, index) => (
-                <Link className="activity-card" href={`/activities/${activity.id}`} key={activity.id} aria-label={`Open ${activity.title}`}>
+                <article className="activity-card" key={activity.id}>
                   <span className="activity-card__index">0{index + 1}</span>
                   <span className="activity-card__icon" aria-hidden="true"><HeartHandshake /></span>
                   <p className="activity-card__type">{activity.type}</p>
                   <h3>{activity.title}</h3>
                   <p className="activity-card__description">{activity.description}</p>
-                  <span className="activity-card__date">{activity.date}</span>
-                  <span className="text-link activity-card__certificate">View details <ArrowUpRight aria-hidden="true" /></span>
-                </Link>
+                </article>
               ))}
             </div>
           </div>

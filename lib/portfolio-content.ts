@@ -126,8 +126,6 @@ export type PortfolioActivity = {
   type: string
   title: string
   description: string
-  date: string
-  certificateUrl?: string
 }
 
 export const projects: PortfolioProject[] = [
@@ -167,22 +165,19 @@ export const activities: PortfolioActivity[] = [
   {
     id: 'volunteering',
     type: 'VOLUNTEERING',
-    title: 'Volunteer experience',
-    description: 'Community service, outreach, and volunteer participation.',
-    date: 'Year or dates',
+    title: 'Coming Soon',
+    description: 'Details about volunteering experiences and community involvement will be added here.',
   },
   {
     id: 'student-life',
     type: 'STUDENT LIFE',
-    title: 'Student activity or event',
-    description: 'Student societies, campus events, and peer activities.',
-    date: 'Year or dates',
+    title: 'Coming Soon',
+    description: 'Details about student activities, campus events, and peer experiences will be added here.',
   },
   {
     id: 'leadership',
     type: 'LEADERSHIP',
-    title: 'Leadership experience',
-    description: 'Leadership roles, shared responsibilities, and team contributions.',
-    date: 'Year or dates',
+    title: 'Coming Soon',
+    description: 'Details about leadership experiences and team contributions will be added here.',
   },
 ]
