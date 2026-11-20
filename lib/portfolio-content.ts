@@ -81,11 +81,6 @@ const competencyEvents: Record<string, CompetencyEntry[]> = {
       title: 'Anatomy JAD – Journal Article Discussion Session',
       date: '16 NOVEMBER 2026',
       summary: 'During this Anatomy JAD session, we discussed the research journal Anatomical Variations of the Median Nerve: A Cadaveric Study. Our team\'s assigned section was Materials and Methods, which allowed us to understand how the researchers carried out their study. It was a new experience for me to explore a research article and work together with my classmates to present its findings. We divided the work among team members, shared our understanding and prepared the discussion together. This activity helped me gain knowledge about anatomical variations while also improving my teamwork, task management and presentation skills. It was a valuable opportunity to experience a different way of learning anatomy.',
-      imageLayout: 'side-by-side',
-      images: [
-        { src: '/images/anatomy-jad-presentation-1.jpg', alt: 'Madhumitha presenting the eligibility criteria slide during the Anatomy JAD session' },
-        { src: '/images/anatomy-jad-presentation-2.jpg', alt: 'Madhumitha discussing the research article during the Anatomy JAD session' },
-      ],
     },
   ],
   'medical-expert': [
