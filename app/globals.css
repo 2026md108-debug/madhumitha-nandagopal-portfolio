@@ -491,3 +491,19 @@ svg { flex: 0 0 auto; }
   .competency-step-nav { gap: 10px; }
   .competency-step-nav__link { max-width: 49%; font-size: 13px; }
 }
+
+
+/* Competency records are shown as a complete vertical list. */
+.competency-event-list { display: grid; gap: 34px; }
+.competency-event { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: start; gap: clamp(24px, 4vw, 48px); padding-top: 30px; border-top: 1px solid var(--line); }
+.competency-event:first-child { padding-top: 4px; border-top: 0; }
+.competency-event__summary { min-height: 0; margin: 16px 0 0; color: var(--muted-ink); font-size: calc(16px + var(--text-size-bump)); line-height: 1.75; }
+.competency-event__gallery { display: grid; min-width: 0; align-items: start; gap: 12px; }
+.competency-event__gallery--side-by-side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.competency-event__gallery--stacked { grid-template-columns: minmax(0, 1fr); }
+.competency-event__image-frame { height: clamp(220px, 27vw, 350px); }
+@media (max-width: 700px) {
+  .competency-event { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .competency-event__gallery--side-by-side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .competency-event__image-frame { height: clamp(190px, 58vw, 300px); }
+}
