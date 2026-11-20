@@ -56,8 +56,9 @@ const competencyEvents: Record<string, CompetencyEntry[]> = {
   'evidence-based-practitioner': [
     {
       id: 'mena-metabolism-congress',
-      title: '3rd MENA Congress for Metabolism in Health and Disease',
-      date: '02–03 October 2026 · Dubai, United Arab Emirates',
+      title: 'MENA Congress on Metabolism in Health and Diseases',
+      date: '2–3 OCTOBER 2026',
+      summary: 'I had the opportunity to attend the MENA Congress on Metabolism in Health and Diseases, which was my first conference as a first-year medical student. I was excited to experience a professional medical conference and learn beyond what we usually cover in our lectures. It was especially interesting to meet people from different courses, along with doctors and other healthcare professionals. Listening to their experiences and gaining exposure to different topics made the conference both informative and inspiring. It was a valuable experience that gave me a better idea of the wider medical and healthcare community.',
       imageLayout: 'stacked',
       images: [
         { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/21E95D39-63AA-4131-B361-51FF476ABCEF-c016zfWWl9GsSCG44YBSuVwpiDULoF.jpg', alt: 'Madhumitha at the 3rd MENA Congress for Metabolism in Health and Disease' },
@@ -66,12 +67,24 @@ const competencyEvents: Record<string, CompetencyEntry[]> = {
     },
     {
       id: 'hayat-program',
-      title: 'Hayat Program',
-      date: '30 September 2026 · Ajman, United Arab Emirates',
+      title: 'Hayat Programme – Organ Donation Conference',
+      date: '30 SEPTEMBER 2026',
+      summary: 'I attended the Hayat Programme, organised by the UAE Ministry of Health and Prevention, which focused on organ donation and transplantation. The conference introduced me to different aspects of organ donation, including its importance and the different perspectives and experiences surrounding it. I found the sessions very insightful, as they helped me understand the topic beyond its medical aspects and appreciate the human stories and emotions involved. It also made me realise how meaningful organ donation can be in giving others another chance at life. Attending this programme was a memorable experience, and I was grateful to receive certificates from both the university and the Ministry of Health and Prevention.',
       imageLayout: 'stacked',
       images: [
         { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1264-WgViI4T3sPeEHwi4nTGOiUJq2YuJGQ.jpg', alt: 'Gulf Medical University certificate of participation in the Hayat Program' },
         { src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1263-hAEH1fvhN4VRfsnjnDRBZzwmEowwUC.jpg', alt: 'Ministry of Health and Prevention certificate of appreciation for the Hayat Program' },
+      ],
+    },
+    {
+      id: 'anatomy-jad-journal-article-discussion',
+      title: 'Anatomy JAD – Journal Article Discussion Session',
+      date: '16 NOVEMBER 2026',
+      summary: 'During this Anatomy JAD session, we discussed the research journal Anatomical Variations of the Median Nerve: A Cadaveric Study. Our team\'s assigned section was Materials and Methods, which allowed us to understand how the researchers carried out their study. It was a new experience for me to explore a research article and work together with my classmates to present its findings. We divided the work among team members, shared our understanding and prepared the discussion together. This activity helped me gain knowledge about anatomical variations while also improving my teamwork, task management and presentation skills. It was a valuable opportunity to experience a different way of learning anatomy.',
+      imageLayout: 'side-by-side',
+      images: [
+        { src: '/images/anatomy-jad-presentation-1.jpg', alt: 'Madhumitha presenting the eligibility criteria slide during the Anatomy JAD session' },
+        { src: '/images/anatomy-jad-presentation-2.jpg', alt: 'Madhumitha discussing the research article during the Anatomy JAD session' },
       ],
     },
   ],
